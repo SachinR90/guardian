@@ -3,26 +3,92 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492151F9275C8B7200922A1F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 492151F8275C8B7200922A1F /* SnapKit */; };
+		49215203275C8C4E00922A1F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49215202275C8C4E00922A1F /* RxSwift */; };
+		49215207275C8C4E00922A1F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 49215206275C8C4E00922A1F /* RxRelay */; };
+		49215209275C8C4E00922A1F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 49215208275C8C4E00922A1F /* RxCocoa */; };
+		4921520B275C8C4E00922A1F /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 4921520A275C8C4E00922A1F /* RxBlocking */; };
+		4921520E275C8C7900922A1F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 4921520D275C8C7900922A1F /* Moya */; };
+		49215210275C8C7900922A1F /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 4921520F275C8C7900922A1F /* ReactiveMoya */; };
+		49215212275C8C7900922A1F /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49215211275C8C7900922A1F /* RxMoya */; };
+		49215215275C8C9500922A1F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 49215214275C8C9500922A1F /* Kingfisher */; };
+		49215218275C8CB300922A1F /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 49215217275C8CB300922A1F /* GRDB */; };
+		4921521B275C930300922A1F /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521A275C930300922A1F /* ApplicationController.swift */; };
+		4921521D275C932E00922A1F /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521C275C932E00922A1F /* AppDependency.swift */; };
+		49215220275C940B00922A1F /* AllInjectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521F275C940B00922A1F /* AllInjectables.swift */; };
+		49215222275C946200922A1F /* AppLevelInjectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215221275C946200922A1F /* AppLevelInjectables.swift */; };
+		49215225275C98B300922A1F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215224275C98B300922A1F /* ViewControllerFactory.swift */; };
+		4921522A275C999800922A1F /* NetworkCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215229275C999800922A1F /* NetworkCancellable.swift */; };
+		4921522C275C99B200922A1F /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921522B275C99B200922A1F /* NetworkType.swift */; };
+		4921522F275C99E500922A1F /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921522E275C99E500922A1F /* NewsApi.swift */; };
+		49215232275C9B9500922A1F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215231275C9B9500922A1F /* ApiError.swift */; };
+		49215235275C9C5F00922A1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215234275C9C5F00922A1F /* Extensions.swift */; };
+		4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */; };
+		4921523C275C9DFE00922A1F /* MoyaResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */; };
+		4921523D275C9DFE00922A1F /* MoyaError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */; };
+		49215240275CA08D00922A1F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921523F275CA08D00922A1F /* Network.swift */; };
+		49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215241275CA0CD00922A1F /* NetworkConnectivity.swift */; };
+		49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215243275CA1DF00922A1F /* PersistenceStore.swift */; };
+		49215246275CA20500922A1F /* GRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215245275CA20500922A1F /* GRDB.swift */; };
+		49215249275CA3FC00922A1F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215248275CA3FC00922A1F /* AppCoordinator.swift */; };
+		4921524B275CA5D300922A1F /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524A275CA5D300922A1F /* Container.swift */; };
+		4921524E275CA5EF00922A1F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524D275CA5EF00922A1F /* Presentable.swift */; };
+		49215250275CA60F00922A1F /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524F275CA60F00922A1F /* RouterType.swift */; };
+		49215253275CA63400922A1F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215252275CA63400922A1F /* BaseCoordinator.swift */; };
+		49215256275CA66B00922A1F /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */; };
+		49215258275CA68200922A1F /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215257275CA68200922A1F /* NavigationDelegate.swift */; };
+		4921525A275CA6CD00922A1F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215259275CA6CD00922A1F /* NavigationRouter.swift */; };
+		4921525C275CA6EF00922A1F /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */; };
+		4921525F275CA71E00922A1F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921525E275CA71E00922A1F /* Animation.swift */; };
+		49215261275CA73200922A1F /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215260275CA73200922A1F /* Animation+Fade.swift */; };
+		49215263275CA75300922A1F /* Animation+SideBySide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215262275CA75300922A1F /* Animation+SideBySide.swift */; };
+		49215265275CA76F00922A1F /* InteractiveTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */; };
+		49215267275CA7A900922A1F /* StaticTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */; };
+		49215269275CA7C800922A1F /* TransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215268275CA7C800922A1F /* TransitionAnimation.swift */; };
 		4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */; };
-		4959D3D1275C899D00B4DDC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3D0275C899D00B4DDC4 /* SceneDelegate.swift */; };
-		4959D3D3275C899D00B4DDC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3D2275C899D00B4DDC4 /* ViewController.swift */; };
-		4959D3D6275C899D00B4DDC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3D4275C899D00B4DDC4 /* Main.storyboard */; };
-		4959D3D9275C899D00B4DDC4 /* guardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */; };
 		4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DA275C899E00B4DDC4 /* Assets.xcassets */; };
 		4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4921521A275C930300922A1F /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		4921521C275C932E00922A1F /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		4921521F275C940B00922A1F /* AllInjectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInjectables.swift; sourceTree = "<group>"; };
+		49215221275C946200922A1F /* AppLevelInjectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLevelInjectables.swift; sourceTree = "<group>"; };
+		49215224275C98B300922A1F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		49215229275C999800922A1F /* NetworkCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCancellable.swift; sourceTree = "<group>"; };
+		4921522B275C99B200922A1F /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
+		4921522E275C99E500922A1F /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		49215231275C9B9500922A1F /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		49215234275C9C5F00922A1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequrest+Extension.swift"; sourceTree = "<group>"; };
+		49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaResponse+Extension.swift"; sourceTree = "<group>"; };
+		4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaError+Extension.swift"; sourceTree = "<group>"; };
+		4921523F275CA08D00922A1F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		49215241275CA0CD00922A1F /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
+		49215243275CA1DF00922A1F /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
+		49215245275CA20500922A1F /* GRDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDB.swift; sourceTree = "<group>"; };
+		49215248275CA3FC00922A1F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4921524A275CA5D300922A1F /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		4921524D275CA5EF00922A1F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		4921524F275CA60F00922A1F /* RouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
+		49215252275CA63400922A1F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
+		49215257275CA68200922A1F /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		49215259275CA6CD00922A1F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		4921525E275CA71E00922A1F /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		49215260275CA73200922A1F /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
+		49215262275CA75300922A1F /* Animation+SideBySide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+SideBySide.swift"; sourceTree = "<group>"; };
+		49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionAnimation.swift; sourceTree = "<group>"; };
+		49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTransitionAnimation.swift; sourceTree = "<group>"; };
+		49215268275CA7C800922A1F /* TransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimation.swift; sourceTree = "<group>"; };
 		4959D3CB275C899D00B4DDC4 /* guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4959D3D0275C899D00B4DDC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4959D3D2275C899D00B4DDC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4959D3D5275C899D00B4DDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = guardian.xcdatamodel; sourceTree = "<group>"; };
 		4959D3DA275C899E00B4DDC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4959D3DD275C899E00B4DDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4959D3DF275C899E00B4DDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,12 +99,162 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49215203275C8C4E00922A1F /* RxSwift in Frameworks */,
+				4921520B275C8C4E00922A1F /* RxBlocking in Frameworks */,
+				49215209275C8C4E00922A1F /* RxCocoa in Frameworks */,
+				49215218275C8CB300922A1F /* GRDB in Frameworks */,
+				49215215275C8C9500922A1F /* Kingfisher in Frameworks */,
+				49215207275C8C4E00922A1F /* RxRelay in Frameworks */,
+				49215210275C8C7900922A1F /* ReactiveMoya in Frameworks */,
+				49215212275C8C7900922A1F /* RxMoya in Frameworks */,
+				4921520E275C8C7900922A1F /* Moya in Frameworks */,
+				492151F9275C8B7200922A1F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49215219275C8EC000922A1F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				49215223275C989B00922A1F /* Factories */,
+				4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */,
+				4921521A275C930300922A1F /* ApplicationController.swift */,
+				4921521C275C932E00922A1F /* AppDependency.swift */,
+				49215231275C9B9500922A1F /* ApiError.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4921521E275C93D700922A1F /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				4921521F275C940B00922A1F /* AllInjectables.swift */,
+				49215221275C946200922A1F /* AppLevelInjectables.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		49215223275C989B00922A1F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				49215224275C98B300922A1F /* ViewControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		49215226275C997200922A1F /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				49215228275C997F00922A1F /* Local */,
+				49215227275C997A00922A1F /* Remote */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		49215227275C997A00922A1F /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4921523E275CA07F00922A1F /* Network */,
+				49215237275C9D9000922A1F /* Extensions */,
+				4921522D275C99D900922A1F /* Api */,
+				49215229275C999800922A1F /* NetworkCancellable.swift */,
+				4921522B275C99B200922A1F /* NetworkType.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		49215228275C997F00922A1F /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				49215243275CA1DF00922A1F /* PersistenceStore.swift */,
+				49215245275CA20500922A1F /* GRDB.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4921522D275C99D900922A1F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4921522E275C99E500922A1F /* NewsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		49215233275C9C4900922A1F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				49215234275C9C5F00922A1F /* Extensions.swift */,
+				49215241275CA0CD00922A1F /* NetworkConnectivity.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		49215237275C9D9000922A1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */,
+				49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */,
+				49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4921523E275CA07F00922A1F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4921523F275CA08D00922A1F /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		49215247275CA3D000922A1F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4921525D275CA70900922A1F /* Transitions */,
+				49215254275CA65100922A1F /* NavigationController */,
+				49215251275CA62300922A1F /* Base */,
+				49215248275CA3FC00922A1F /* AppCoordinator.swift */,
+				4921524A275CA5D300922A1F /* Container.swift */,
+				4921524D275CA5EF00922A1F /* Presentable.swift */,
+				4921524F275CA60F00922A1F /* RouterType.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		49215251275CA62300922A1F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				49215252275CA63400922A1F /* BaseCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		49215254275CA65100922A1F /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */,
+				49215257275CA68200922A1F /* NavigationDelegate.swift */,
+				49215259275CA6CD00922A1F /* NavigationRouter.swift */,
+				4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		4921525D275CA70900922A1F /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				4921525E275CA71E00922A1F /* Animation.swift */,
+				49215260275CA73200922A1F /* Animation+Fade.swift */,
+				49215262275CA75300922A1F /* Animation+SideBySide.swift */,
+				49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */,
+				49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */,
+				49215268275CA7C800922A1F /* TransitionAnimation.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		4959D3C2275C899D00B4DDC4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +274,14 @@
 		4959D3CD275C899D00B4DDC4 /* guardian */ = {
 			isa = PBXGroup;
 			children = (
-				4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */,
-				4959D3D0275C899D00B4DDC4 /* SceneDelegate.swift */,
-				4959D3D2275C899D00B4DDC4 /* ViewController.swift */,
-				4959D3D4275C899D00B4DDC4 /* Main.storyboard */,
+				49215247275CA3D000922A1F /* Coordinators */,
+				49215233275C9C4900922A1F /* Utilities */,
+				49215226275C997200922A1F /* DataStore */,
+				4921521E275C93D700922A1F /* Injection */,
+				49215219275C8EC000922A1F /* Application */,
 				4959D3DA275C899E00B4DDC4 /* Assets.xcassets */,
 				4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */,
 				4959D3DF275C899E00B4DDC4 /* Info.plist */,
-				4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */,
 			);
 			path = guardian;
 			sourceTree = "<group>";
@@ -86,6 +302,18 @@
 			dependencies = (
 			);
 			name = guardian;
+			packageProductDependencies = (
+				492151F8275C8B7200922A1F /* SnapKit */,
+				49215202275C8C4E00922A1F /* RxSwift */,
+				49215206275C8C4E00922A1F /* RxRelay */,
+				49215208275C8C4E00922A1F /* RxCocoa */,
+				4921520A275C8C4E00922A1F /* RxBlocking */,
+				4921520D275C8C7900922A1F /* Moya */,
+				4921520F275C8C7900922A1F /* ReactiveMoya */,
+				49215211275C8C7900922A1F /* RxMoya */,
+				49215214275C8C9500922A1F /* Kingfisher */,
+				49215217275C8CB300922A1F /* GRDB */,
+			);
 			productName = guardian;
 			productReference = 4959D3CB275C899D00B4DDC4 /* guardian.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +341,13 @@
 				Base,
 			);
 			mainGroup = 4959D3C2275C899D00B4DDC4;
+			packageReferences = (
+				492151F7275C8B7200922A1F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				4921520C275C8C7900922A1F /* XCRemoteSwiftPackageReference "Moya" */,
+				49215213275C8C9500922A1F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				49215216275C8CB300922A1F /* XCRemoteSwiftPackageReference "GRDB" */,
+			);
 			productRefGroup = 4959D3CC275C899D00B4DDC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,7 +364,6 @@
 			files = (
 				4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */,
 				4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */,
-				4959D3D6275C899D00B4DDC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,24 +374,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4959D3D9275C899D00B4DDC4 /* guardian.xcdatamodeld in Sources */,
-				4959D3D3275C899D00B4DDC4 /* ViewController.swift in Sources */,
+				49215256275CA66B00922A1F /* NavigationControllerCoordinator.swift in Sources */,
+				49215246275CA20500922A1F /* GRDB.swift in Sources */,
+				4921523D275C9DFE00922A1F /* MoyaError+Extension.swift in Sources */,
+				49215250275CA60F00922A1F /* RouterType.swift in Sources */,
+				4921522C275C99B200922A1F /* NetworkType.swift in Sources */,
+				49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */,
+				49215222275C946200922A1F /* AppLevelInjectables.swift in Sources */,
+				49215220275C940B00922A1F /* AllInjectables.swift in Sources */,
+				49215232275C9B9500922A1F /* ApiError.swift in Sources */,
+				49215240275CA08D00922A1F /* Network.swift in Sources */,
+				4921525A275CA6CD00922A1F /* NavigationRouter.swift in Sources */,
+				4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */,
+				49215258275CA68200922A1F /* NavigationDelegate.swift in Sources */,
+				49215267275CA7A900922A1F /* StaticTransitionAnimation.swift in Sources */,
+				4921521D275C932E00922A1F /* AppDependency.swift in Sources */,
+				4921522A275C999800922A1F /* NetworkCancellable.swift in Sources */,
+				49215225275C98B300922A1F /* ViewControllerFactory.swift in Sources */,
+				4921521B275C930300922A1F /* ApplicationController.swift in Sources */,
+				4921523C275C9DFE00922A1F /* MoyaResponse+Extension.swift in Sources */,
+				49215265275CA76F00922A1F /* InteractiveTransitionAnimation.swift in Sources */,
+				49215269275CA7C800922A1F /* TransitionAnimation.swift in Sources */,
+				4921522F275C99E500922A1F /* NewsApi.swift in Sources */,
+				49215253275CA63400922A1F /* BaseCoordinator.swift in Sources */,
+				49215249275CA3FC00922A1F /* AppCoordinator.swift in Sources */,
+				49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */,
+				4921524B275CA5D300922A1F /* Container.swift in Sources */,
+				49215263275CA75300922A1F /* Animation+SideBySide.swift in Sources */,
+				49215235275C9C5F00922A1F /* Extensions.swift in Sources */,
 				4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */,
-				4959D3D1275C899D00B4DDC4 /* SceneDelegate.swift in Sources */,
+				49215261275CA73200922A1F /* Animation+Fade.swift in Sources */,
+				4921525C275CA6EF00922A1F /* UINavigationController+Extensions.swift in Sources */,
+				4921525F275CA71E00922A1F /* Animation.swift in Sources */,
+				4921524E275CA5EF00922A1F /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4959D3D4275C899D00B4DDC4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4959D3D5275C899D00B4DDC4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -299,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.guardian.guardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.guardian.guardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,18 +599,101 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */,
-			);
-			currentVersion = 4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */;
-			path = guardian.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		492151F7275C8B7200922A1F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
 		};
-/* End XCVersionGroup section */
+		49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		4921520C275C8C7900922A1F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sachin-rao-coditas/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.2;
+			};
+		};
+		49215213275C8C9500922A1F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+		49215216275C8CB300922A1F /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		492151F8275C8B7200922A1F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 492151F7275C8B7200922A1F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		49215202275C8C4E00922A1F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		49215206275C8C4E00922A1F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		49215208275C8C4E00922A1F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		4921520A275C8C4E00922A1F /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215201275C8C4E00922A1F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		4921520D275C8C7900922A1F /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4921520C275C8C7900922A1F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		4921520F275C8C7900922A1F /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4921520C275C8C7900922A1F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		49215211275C8C7900922A1F /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4921520C275C8C7900922A1F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		49215214275C8C9500922A1F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215213275C8C9500922A1F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		49215217275C8CB300922A1F /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49215216275C8CB300922A1F /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4959D3C3275C899D00B4DDC4 /* Project object */;
 }
