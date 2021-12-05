@@ -15,10 +15,20 @@ final class AppDependency: AllInjectables {
   lazy var networkConnectivity: Connectivity = { NetworkConnectivity.shared }()
   lazy var network: Network = { Network.newDefaultNetwork() }()
   lazy var persistenceStore: PersistenceStore = { AppDatabase() }()
+  lazy var homeRespository: HomeRepositoryType = { HomeRepository(self) }()
+  lazy var newsDAO: NewsDAOType = { NewsDAO() }()
+
+  lazy var homePersistenceServiceable: HomePersistenceServiceable = {
+    HomePersistenceService(self)
+  }()
 
   // MARK: Factories
 
   var viewControllerProvider: ViewControllerProvider {
     ViewControllerFactory(dependency: self)
+  }
+
+  var homeViewModel: HomeViewModelType {
+    HomeViewModel(self)
   }
 }

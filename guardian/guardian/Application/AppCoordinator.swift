@@ -19,14 +19,19 @@ class AppCoordinator: NavigationControllerCoordinator {
     ViewControllerFactory(dependency: dependency)
   }
 
+  private weak var homeCoordinator: HomeCoordinator?
+
   override func start() {
-    launchSplashFlow()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-      self?.startMainFlow()
-    }
+    startMainFlow()
   }
 
-  func launchSplashFlow() {}
-
-  func startMainFlow() {}
+  func startMainFlow() {
+    if homeCoordinator == nil {
+      let coordinator = HomeCoordinator(router: router, dependency: dependency)
+      addChildCoordinator(coordinator)
+      homeCoordinator = coordinator
+      coordinator.start()
+      router.set([coordinator], hideBar: false, animated: false, animation: nil)
+    }
+  }
 }

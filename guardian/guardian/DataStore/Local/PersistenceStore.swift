@@ -39,16 +39,18 @@ struct AppDatabase: PersistenceStore {
   private var migrator: DatabaseMigrator {
     var migrator = DatabaseMigrator()
 
-    migrator.registerMigration("v1") { _ in
+    migrator.registerMigration("v1") { db in
+      try db.createTable(News.self)
     }
     return migrator
   }
 
   func dropAllRecords() throws {
-    try CurrentDB.database().inTransaction { _ in
+    try CurrentDB.database().inTransaction { db in
 
-      // Meetings
-      .commit
+      // News
+      try News.deleteAll(db)
+      return .commit
     }
   }
 }

@@ -15,13 +15,13 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift",
         "state": {
           "branch": null,
-          "revision": "7a77a1fd0625232edd7b889d307fa701ad41c8cd",
-          "version": "5.15.0"
+          "revision": "1ea4a44bb8d5b868a6cbea31974a42bd1fde6a35",
+          "version": "5.0.0"
         }
       },
       {
         "package": "Kingfisher",
-        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
         "state": {
           "branch": null,
           "revision": "318e319998bf555c3e914d5c3adb6da05af86a32",
@@ -47,6 +47,24 @@
         }
       },
       {
+        "package": "RxDataSources",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxDataSources.git",
+        "state": {
+          "branch": null,
+          "revision": "a18cee01c9ee55f04d0c7eb15c77a96c3648c88e",
+          "version": "4.0.1"
+        }
+      },
+      {
+        "package": "RxGRDB",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxGRDB",
+        "state": {
+          "branch": null,
+          "revision": "b175e9f83bb208dc6b23d78979351bd56a6172ad",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift",
         "state": {
@@ -57,7 +75,7 @@
       },
       {
         "package": "SnapKit",
-        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
           "branch": null,
           "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
