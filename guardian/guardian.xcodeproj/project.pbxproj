@@ -17,18 +17,48 @@
 		49215212275C8C7900922A1F /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 49215211275C8C7900922A1F /* RxMoya */; };
 		49215215275C8C9500922A1F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 49215214275C8C9500922A1F /* Kingfisher */; };
 		49215218275C8CB300922A1F /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 49215217275C8CB300922A1F /* GRDB */; };
+		4921521B275C930300922A1F /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521A275C930300922A1F /* ApplicationController.swift */; };
+		4921521D275C932E00922A1F /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521C275C932E00922A1F /* AppDependency.swift */; };
+		49215220275C940B00922A1F /* AllInjectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921521F275C940B00922A1F /* AllInjectables.swift */; };
+		49215222275C946200922A1F /* AppLevelInjectables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215221275C946200922A1F /* AppLevelInjectables.swift */; };
+		49215225275C98B300922A1F /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215224275C98B300922A1F /* ViewControllerFactory.swift */; };
+		4921522A275C999800922A1F /* NetworkCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215229275C999800922A1F /* NetworkCancellable.swift */; };
+		4921522C275C99B200922A1F /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921522B275C99B200922A1F /* NetworkType.swift */; };
+		4921522F275C99E500922A1F /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921522E275C99E500922A1F /* NewsApi.swift */; };
+		49215232275C9B9500922A1F /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215231275C9B9500922A1F /* ApiError.swift */; };
+		49215235275C9C5F00922A1F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215234275C9C5F00922A1F /* Extensions.swift */; };
+		4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */; };
+		4921523C275C9DFE00922A1F /* MoyaResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */; };
+		4921523D275C9DFE00922A1F /* MoyaError+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */; };
+		49215240275CA08D00922A1F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921523F275CA08D00922A1F /* Network.swift */; };
+		49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215241275CA0CD00922A1F /* NetworkConnectivity.swift */; };
+		49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215243275CA1DF00922A1F /* PersistenceStore.swift */; };
+		49215246275CA20500922A1F /* GRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215245275CA20500922A1F /* GRDB.swift */; };
 		4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */; };
-		4959D3D3275C899D00B4DDC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3D2275C899D00B4DDC4 /* ViewController.swift */; };
-		4959D3D9275C899D00B4DDC4 /* guardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */; };
 		4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DA275C899E00B4DDC4 /* Assets.xcassets */; };
 		4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4921521A275C930300922A1F /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		4921521C275C932E00922A1F /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		4921521F275C940B00922A1F /* AllInjectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInjectables.swift; sourceTree = "<group>"; };
+		49215221275C946200922A1F /* AppLevelInjectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLevelInjectables.swift; sourceTree = "<group>"; };
+		49215224275C98B300922A1F /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		49215229275C999800922A1F /* NetworkCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCancellable.swift; sourceTree = "<group>"; };
+		4921522B275C99B200922A1F /* NetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
+		4921522E275C99E500922A1F /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
+		49215231275C9B9500922A1F /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		49215234275C9C5F00922A1F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequrest+Extension.swift"; sourceTree = "<group>"; };
+		49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaResponse+Extension.swift"; sourceTree = "<group>"; };
+		4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaError+Extension.swift"; sourceTree = "<group>"; };
+		4921523F275CA08D00922A1F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		49215241275CA0CD00922A1F /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
+		49215243275CA1DF00922A1F /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
+		49215245275CA20500922A1F /* GRDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDB.swift; sourceTree = "<group>"; };
 		4959D3CB275C899D00B4DDC4 /* guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4959D3D2275C899D00B4DDC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = guardian.xcdatamodel; sourceTree = "<group>"; };
 		4959D3DA275C899E00B4DDC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4959D3DD275C899E00B4DDC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4959D3DF275C899E00B4DDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,9 +88,95 @@
 		49215219275C8EC000922A1F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				49215223275C989B00922A1F /* Factories */,
 				4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */,
+				4921521A275C930300922A1F /* ApplicationController.swift */,
+				4921521C275C932E00922A1F /* AppDependency.swift */,
+				49215231275C9B9500922A1F /* ApiError.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		4921521E275C93D700922A1F /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				4921521F275C940B00922A1F /* AllInjectables.swift */,
+				49215221275C946200922A1F /* AppLevelInjectables.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		49215223275C989B00922A1F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				49215224275C98B300922A1F /* ViewControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		49215226275C997200922A1F /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				49215228275C997F00922A1F /* Local */,
+				49215227275C997A00922A1F /* Remote */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		49215227275C997A00922A1F /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4921523E275CA07F00922A1F /* Network */,
+				49215237275C9D9000922A1F /* Extensions */,
+				4921522D275C99D900922A1F /* Api */,
+				49215229275C999800922A1F /* NetworkCancellable.swift */,
+				4921522B275C99B200922A1F /* NetworkType.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		49215228275C997F00922A1F /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				49215243275CA1DF00922A1F /* PersistenceStore.swift */,
+				49215245275CA20500922A1F /* GRDB.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		4921522D275C99D900922A1F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4921522E275C99E500922A1F /* NewsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		49215233275C9C4900922A1F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				49215234275C9C5F00922A1F /* Extensions.swift */,
+				49215241275CA0CD00922A1F /* NetworkConnectivity.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		49215237275C9D9000922A1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4921523A275C9DFE00922A1F /* MoyaError+Extension.swift */,
+				49215239275C9DFE00922A1F /* MoyaResponse+Extension.swift */,
+				49215238275C9DFE00922A1F /* URLRequrest+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4921523E275CA07F00922A1F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4921523F275CA08D00922A1F /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		4959D3C2275C899D00B4DDC4 = {
@@ -82,12 +198,13 @@
 		4959D3CD275C899D00B4DDC4 /* guardian */ = {
 			isa = PBXGroup;
 			children = (
+				49215233275C9C4900922A1F /* Utilities */,
+				49215226275C997200922A1F /* DataStore */,
+				4921521E275C93D700922A1F /* Injection */,
 				49215219275C8EC000922A1F /* Application */,
-				4959D3D2275C899D00B4DDC4 /* ViewController.swift */,
 				4959D3DA275C899E00B4DDC4 /* Assets.xcassets */,
 				4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */,
 				4959D3DF275C899E00B4DDC4 /* Info.plist */,
-				4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */,
 			);
 			path = guardian;
 			sourceTree = "<group>";
@@ -180,8 +297,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4959D3D9275C899D00B4DDC4 /* guardian.xcdatamodeld in Sources */,
-				4959D3D3275C899D00B4DDC4 /* ViewController.swift in Sources */,
+				49215246275CA20500922A1F /* GRDB.swift in Sources */,
+				4921523D275C9DFE00922A1F /* MoyaError+Extension.swift in Sources */,
+				4921522C275C99B200922A1F /* NetworkType.swift in Sources */,
+				49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */,
+				49215222275C946200922A1F /* AppLevelInjectables.swift in Sources */,
+				49215220275C940B00922A1F /* AllInjectables.swift in Sources */,
+				49215232275C9B9500922A1F /* ApiError.swift in Sources */,
+				49215240275CA08D00922A1F /* Network.swift in Sources */,
+				4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */,
+				4921521D275C932E00922A1F /* AppDependency.swift in Sources */,
+				4921522A275C999800922A1F /* NetworkCancellable.swift in Sources */,
+				49215225275C98B300922A1F /* ViewControllerFactory.swift in Sources */,
+				4921521B275C930300922A1F /* ApplicationController.swift in Sources */,
+				4921523C275C9DFE00922A1F /* MoyaResponse+Extension.swift in Sources */,
+				4921522F275C99E500922A1F /* NewsApi.swift in Sources */,
+				49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */,
+				49215235275C9C5F00922A1F /* Extensions.swift in Sources */,
 				4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,19 +602,6 @@
 			productName = GRDB;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		4959D3D7275C899D00B4DDC4 /* guardian.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */,
-			);
-			currentVersion = 4959D3D8275C899D00B4DDC4 /* guardian.xcdatamodel */;
-			path = guardian.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4959D3C3275C899D00B4DDC4 /* Project object */;
 }
