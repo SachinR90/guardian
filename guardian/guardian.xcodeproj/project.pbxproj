@@ -34,6 +34,21 @@
 		49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215241275CA0CD00922A1F /* NetworkConnectivity.swift */; };
 		49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215243275CA1DF00922A1F /* PersistenceStore.swift */; };
 		49215246275CA20500922A1F /* GRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215245275CA20500922A1F /* GRDB.swift */; };
+		49215249275CA3FC00922A1F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215248275CA3FC00922A1F /* AppCoordinator.swift */; };
+		4921524B275CA5D300922A1F /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524A275CA5D300922A1F /* Container.swift */; };
+		4921524E275CA5EF00922A1F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524D275CA5EF00922A1F /* Presentable.swift */; };
+		49215250275CA60F00922A1F /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921524F275CA60F00922A1F /* RouterType.swift */; };
+		49215253275CA63400922A1F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215252275CA63400922A1F /* BaseCoordinator.swift */; };
+		49215256275CA66B00922A1F /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */; };
+		49215258275CA68200922A1F /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215257275CA68200922A1F /* NavigationDelegate.swift */; };
+		4921525A275CA6CD00922A1F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215259275CA6CD00922A1F /* NavigationRouter.swift */; };
+		4921525C275CA6EF00922A1F /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */; };
+		4921525F275CA71E00922A1F /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4921525E275CA71E00922A1F /* Animation.swift */; };
+		49215261275CA73200922A1F /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215260275CA73200922A1F /* Animation+Fade.swift */; };
+		49215263275CA75300922A1F /* Animation+SideBySide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215262275CA75300922A1F /* Animation+SideBySide.swift */; };
+		49215265275CA76F00922A1F /* InteractiveTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */; };
+		49215267275CA7A900922A1F /* StaticTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */; };
+		49215269275CA7C800922A1F /* TransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215268275CA7C800922A1F /* TransitionAnimation.swift */; };
 		4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */; };
 		4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DA275C899E00B4DDC4 /* Assets.xcassets */; };
 		4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */; };
@@ -57,6 +72,21 @@
 		49215241275CA0CD00922A1F /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
 		49215243275CA1DF00922A1F /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceStore.swift; sourceTree = "<group>"; };
 		49215245275CA20500922A1F /* GRDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDB.swift; sourceTree = "<group>"; };
+		49215248275CA3FC00922A1F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4921524A275CA5D300922A1F /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		4921524D275CA5EF00922A1F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		4921524F275CA60F00922A1F /* RouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
+		49215252275CA63400922A1F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
+		49215257275CA68200922A1F /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		49215259275CA6CD00922A1F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		4921525E275CA71E00922A1F /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		49215260275CA73200922A1F /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
+		49215262275CA75300922A1F /* Animation+SideBySide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+SideBySide.swift"; sourceTree = "<group>"; };
+		49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionAnimation.swift; sourceTree = "<group>"; };
+		49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTransitionAnimation.swift; sourceTree = "<group>"; };
+		49215268275CA7C800922A1F /* TransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionAnimation.swift; sourceTree = "<group>"; };
 		4959D3CB275C899D00B4DDC4 /* guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4959D3DA275C899E00B4DDC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +209,52 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		49215247275CA3D000922A1F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4921525D275CA70900922A1F /* Transitions */,
+				49215254275CA65100922A1F /* NavigationController */,
+				49215251275CA62300922A1F /* Base */,
+				49215248275CA3FC00922A1F /* AppCoordinator.swift */,
+				4921524A275CA5D300922A1F /* Container.swift */,
+				4921524D275CA5EF00922A1F /* Presentable.swift */,
+				4921524F275CA60F00922A1F /* RouterType.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		49215251275CA62300922A1F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				49215252275CA63400922A1F /* BaseCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		49215254275CA65100922A1F /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				49215255275CA66B00922A1F /* NavigationControllerCoordinator.swift */,
+				49215257275CA68200922A1F /* NavigationDelegate.swift */,
+				49215259275CA6CD00922A1F /* NavigationRouter.swift */,
+				4921525B275CA6EF00922A1F /* UINavigationController+Extensions.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		4921525D275CA70900922A1F /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				4921525E275CA71E00922A1F /* Animation.swift */,
+				49215260275CA73200922A1F /* Animation+Fade.swift */,
+				49215262275CA75300922A1F /* Animation+SideBySide.swift */,
+				49215264275CA76F00922A1F /* InteractiveTransitionAnimation.swift */,
+				49215266275CA7A900922A1F /* StaticTransitionAnimation.swift */,
+				49215268275CA7C800922A1F /* TransitionAnimation.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		4959D3C2275C899D00B4DDC4 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +274,7 @@
 		4959D3CD275C899D00B4DDC4 /* guardian */ = {
 			isa = PBXGroup;
 			children = (
+				49215247275CA3D000922A1F /* Coordinators */,
 				49215233275C9C4900922A1F /* Utilities */,
 				49215226275C997200922A1F /* DataStore */,
 				4921521E275C93D700922A1F /* Injection */,
@@ -297,24 +374,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49215256275CA66B00922A1F /* NavigationControllerCoordinator.swift in Sources */,
 				49215246275CA20500922A1F /* GRDB.swift in Sources */,
 				4921523D275C9DFE00922A1F /* MoyaError+Extension.swift in Sources */,
+				49215250275CA60F00922A1F /* RouterType.swift in Sources */,
 				4921522C275C99B200922A1F /* NetworkType.swift in Sources */,
 				49215244275CA1DF00922A1F /* PersistenceStore.swift in Sources */,
 				49215222275C946200922A1F /* AppLevelInjectables.swift in Sources */,
 				49215220275C940B00922A1F /* AllInjectables.swift in Sources */,
 				49215232275C9B9500922A1F /* ApiError.swift in Sources */,
 				49215240275CA08D00922A1F /* Network.swift in Sources */,
+				4921525A275CA6CD00922A1F /* NavigationRouter.swift in Sources */,
 				4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */,
+				49215258275CA68200922A1F /* NavigationDelegate.swift in Sources */,
+				49215267275CA7A900922A1F /* StaticTransitionAnimation.swift in Sources */,
 				4921521D275C932E00922A1F /* AppDependency.swift in Sources */,
 				4921522A275C999800922A1F /* NetworkCancellable.swift in Sources */,
 				49215225275C98B300922A1F /* ViewControllerFactory.swift in Sources */,
 				4921521B275C930300922A1F /* ApplicationController.swift in Sources */,
 				4921523C275C9DFE00922A1F /* MoyaResponse+Extension.swift in Sources */,
+				49215265275CA76F00922A1F /* InteractiveTransitionAnimation.swift in Sources */,
+				49215269275CA7C800922A1F /* TransitionAnimation.swift in Sources */,
 				4921522F275C99E500922A1F /* NewsApi.swift in Sources */,
+				49215253275CA63400922A1F /* BaseCoordinator.swift in Sources */,
+				49215249275CA3FC00922A1F /* AppCoordinator.swift in Sources */,
 				49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */,
+				4921524B275CA5D300922A1F /* Container.swift in Sources */,
+				49215263275CA75300922A1F /* Animation+SideBySide.swift in Sources */,
 				49215235275C9C5F00922A1F /* Extensions.swift in Sources */,
 				4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */,
+				49215261275CA73200922A1F /* Animation+Fade.swift in Sources */,
+				4921525C275CA6EF00922A1F /* UINavigationController+Extensions.swift in Sources */,
+				4921525F275CA71E00922A1F /* Animation.swift in Sources */,
+				4921524E275CA5EF00922A1F /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
