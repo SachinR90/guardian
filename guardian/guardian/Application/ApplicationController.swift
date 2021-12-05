@@ -5,26 +5,28 @@
 //  Created by Sachin Rao on 05/12/21.
 //
 
-import UIKit
-import GRDB
 import Foundation
+import GRDB
+import UIKit
 
 class ApplicationController {
   lazy var appNavigationController = UINavigationController()
   lazy var appRouter = NavigationRouter(navigationController: appNavigationController)
   private var appCoordinator: AppCoordinator!
-    private let appDependency = AppDependency()
+  private let appDependency = AppDependency()
 
   func start(with window: UIWindow?) {
     configureAppAppearance()
-    appCoordinator = AppCoordinator(router: appRouter,dependencies: appDependency)
+    appCoordinator = AppCoordinator(router: appRouter, dependencies: appDependency)
     // Setup app data base
     do {
       _ = try setupDatabase()
     } catch {
       fatalError("Database could not setup properly.")
     }
-    
+    appDependency.networkConnectivity.startMonitoring()
+    appCoordinator = AppCoordinator(router: appRouter, dependencies: appDependency)
+
     window?.rootViewController = appCoordinator.toPresent()
     window?.makeKeyAndVisible()
 
@@ -32,27 +34,32 @@ class ApplicationController {
   }
 
   private func configureAppAppearance() {
-    UINavigationBar.appearance().barStyle = .black
+    UINavigationBar.appearance().barStyle = .default
     UINavigationBar.appearance().isTranslucent = false
     UINavigationBar.appearance().shadowImage = UIImage()
+    if var textAttributes = UINavigationBar.appearance().titleTextAttributes {
+      textAttributes[NSAttributedString.Key.foregroundColor] = UIColor.black
+      UINavigationBar.appearance().titleTextAttributes = textAttributes
+    }
   }
 }
-extension ApplicationController{
-    private func setupDatabase() throws -> DatabaseQueue {
-      // Create a DatabasePool for efficient multi-threading
-      let databaseURL = try FileManager.default
-        .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("Guardian.sqlite.db")
 
-      let config = Configuration()
-      // config.trace = { print($0) }     // Prints all SQL statements
-      let dbQueue = try DatabaseQueue(path: databaseURL.path, configuration: config)
+extension ApplicationController {
+  private func setupDatabase() throws -> DatabaseQueue {
+    // Create a DatabasePool for efficient multi-threading
+    let databaseURL = try FileManager.default
+      .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+      .appendingPathComponent("Guardian.sqlite.db")
 
-      CurrentDB = GRDBWorld(database: { dbQueue })
+    let config = Configuration()
+    // config.trace = { print($0) }     // Prints all SQL statements
+    let dbQueue = try DatabaseQueue(path: databaseURL.path, configuration: config)
 
-      // Setup the database
-      try appDependency.persistenceStore.setup()
+    CurrentDB = GRDBWorld(database: { dbQueue })
 
-      return dbQueue
-    }
+    // Setup the database
+    try appDependency.persistenceStore.setup()
+
+    return dbQueue
+  }
 }

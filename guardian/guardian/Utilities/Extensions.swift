@@ -21,6 +21,16 @@ extension DateFormatter {
   }
 }
 
+extension Date {
+  static func - (lhs: Date, rhs: Date) -> TimeInterval {
+    lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+  }
+
+  static func seconds(from referenceDate: Date) -> TimeInterval {
+    Date().timeIntervalSince(referenceDate)
+  }
+}
+
 // MARK: - NSNumber
 
 extension NSNumber {
@@ -66,6 +76,10 @@ extension String {
     let trim = trimmed()
     return trim.isEmpty ? nil : trim
   }
+
+  func stripOutHtml() -> String {
+    replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+  }
 }
 
 // MARK: - Data
@@ -106,9 +120,7 @@ extension Array {
   func grouped<T: Hashable>(by keyForValue: (Element) -> T) -> [T: [Element]] {
     Dictionary(grouping: self, by: keyForValue)
   }
-}
 
-extension Array {
   public subscript(safeIndex index: Int) -> Element? {
     guard index >= 0, index < endIndex else {
       return nil

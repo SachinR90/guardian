@@ -14,13 +14,13 @@ enum NewsAPI {
 
 extension NewsAPI: TargetType {
   var baseURL: URL {
-    URL(string: "https://content.guardianapis.com/")!
+    URL(string: "https://content.guardianapis.com")!
   }
 
   var path: String {
     switch self {
     case .getNews:
-      return "search/"
+      return "/search"
     }
   }
 
@@ -38,9 +38,19 @@ extension NewsAPI: TargetType {
   var task: Task {
     switch self {
     case .getNews(let query):
+      let fields = "body,thumbnail"
+      let orderBy = "newest"
+      let orderDate = "published"
       let apiKey = "88bb0b71-0f3a-46d2-9b30-29ea0b8f8177"
-      let q = query
-      return .requestParameters(parameters: ["api-key": apiKey, "q": q], encoding: URLEncoding(destination: .queryString))
+      return .requestParameters(parameters:
+        [
+          "q": query,
+          "show-fields": fields,
+          "order-by": orderBy,
+          "order-date": orderDate,
+          "api-key": apiKey
+        ],
+        encoding: URLEncoding(destination: .queryString))
     }
   }
 

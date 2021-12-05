@@ -12,3 +12,7 @@ typealias AllInjectables =
   ViewControllerInjectable
     & NetworkInjectable
     & PersistenceInjectable
+    & HomeViewModelInjectable
+    & HomeRepositoryInjectable
+    & NewsDAOInjectable
+    & HomePersistenceServiceInjectable
