@@ -12,3 +12,7 @@ protocol NewsDAOInjectable { var newsDAO: NewsDAOType { get } }
 protocol HomePersistenceServiceInjectable {
   var homePersistenceServiceable: HomePersistenceServiceable { get }
 }
+
+protocol NewsDetailsViewModelInjectable {
+  var newsDetailsViewModel: NewsDetailsViewModelType { get }
+}

@@ -75,6 +75,12 @@
 		4973C099275D07940086F5C6 /* NewsItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4973C097275D07940086F5C6 /* NewsItemTableViewCell.xib */; };
 		4973C09B275D0D740086F5C6 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C09A275D0D740086F5C6 /* UITableView+Extension.swift */; };
 		4973C0A1275D55FD0086F5C6 /* NewsFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0A0275D55FD0086F5C6 /* NewsFields.swift */; };
+		4973C0A4275DB0CE0086F5C6 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0A2275DB0CE0086F5C6 /* NewsDetailsViewController.swift */; };
+		4973C0A5275DB0CF0086F5C6 /* NewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4973C0A3275DB0CE0086F5C6 /* NewsDetailsViewController.xib */; };
+		4973C0AB275DB26F0086F5C6 /* ProgressWebViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */; };
+		4973C0AD275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0AC275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift */; };
+		4973C0AF275DB4280086F5C6 /* NewsDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0AE275DB4280086F5C6 /* NewsDetailsCoordinator.swift */; };
+		4973C0B1275DB4A50086F5C6 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0B0275DB4A50086F5C6 /* NewsDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +141,11 @@
 		4973C097275D07940086F5C6 /* NewsItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemTableViewCell.xib; sourceTree = "<group>"; };
 		4973C09A275D0D740086F5C6 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		4973C0A0275D55FD0086F5C6 /* NewsFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFields.swift; sourceTree = "<group>"; };
+		4973C0A2275DB0CE0086F5C6 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		4973C0A3275DB0CE0086F5C6 /* NewsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsViewController.xib; sourceTree = "<group>"; };
+		4973C0AC275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowerViewControllerDisplayable.swift; sourceTree = "<group>"; };
+		4973C0AE275DB4280086F5C6 /* NewsDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsCoordinator.swift; sourceTree = "<group>"; };
+		4973C0B0275DB4A50086F5C6 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +164,7 @@
 				496203A5275CDA5F004F26C5 /* RxDataSources in Frameworks */,
 				4962039A275CD9B4004F26C5 /* GRDB in Frameworks */,
 				496203AD275CDA86004F26C5 /* RxRelay in Frameworks */,
+				4973C0AB275DB26F0086F5C6 /* ProgressWebViewController in Frameworks */,
 				496203AB275CDA86004F26C5 /* RxSwift in Frameworks */,
 				496203B1275CDA86004F26C5 /* RxBlocking in Frameworks */,
 			);
@@ -312,6 +324,7 @@
 		4921526A275CADA400922A1F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4973C0A6275DB1450086F5C6 /* BrowserViewControllerDisplayable */,
 				4921526B275CADAD00922A1F /* Home */,
 			);
 			path = Features;
@@ -412,8 +425,20 @@
 		4973C09E275D3A180086F5C6 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				4973C0A2275DB0CE0086F5C6 /* NewsDetailsViewController.swift */,
+				4973C0A3275DB0CE0086F5C6 /* NewsDetailsViewController.xib */,
+				4973C0AE275DB4280086F5C6 /* NewsDetailsCoordinator.swift */,
+				4973C0B0275DB4A50086F5C6 /* NewsDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		4973C0A6275DB1450086F5C6 /* BrowserViewControllerDisplayable */ = {
+			isa = PBXGroup;
+			children = (
+				4973C0AC275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift */,
+			);
+			path = BrowserViewControllerDisplayable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +471,7 @@
 				496203B3275CDAB6004F26C5 /* Moya */,
 				496203B5275CDAB6004F26C5 /* ReactiveMoya */,
 				496203B7275CDAB6004F26C5 /* RxMoya */,
+				4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */,
 			);
 			productName = guardian;
 			productReference = 4959D3CB275C899D00B4DDC4 /* guardian.app */;
@@ -482,6 +508,7 @@
 				496203A6275CDA74004F26C5 /* XCRemoteSwiftPackageReference "RxGRDB" */,
 				496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */,
+				4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */,
 			);
 			productRefGroup = 4959D3CC275C899D00B4DDC4 /* Products */;
 			projectDirPath = "";
@@ -500,6 +527,7 @@
 				4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */,
 				4973C099275D07940086F5C6 /* NewsItemTableViewCell.xib in Resources */,
 				4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */,
+				4973C0A5275DB0CF0086F5C6 /* NewsDetailsViewController.xib in Resources */,
 				49215272275CAE3C00922A1F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,8 +559,11 @@
 				4973C09B275D0D740086F5C6 /* UITableView+Extension.swift in Sources */,
 				4973C0A1275D55FD0086F5C6 /* NewsFields.swift in Sources */,
 				4973C094275CF75E0086F5C6 /* Debouncer.swift in Sources */,
+				4973C0A4275DB0CE0086F5C6 /* NewsDetailsViewController.swift in Sources */,
 				4921525A275CA6CD00922A1F /* NavigationRouter.swift in Sources */,
+				4973C0AD275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift in Sources */,
 				4921523B275C9DFE00922A1F /* URLRequrest+Extension.swift in Sources */,
+				4973C0AF275DB4280086F5C6 /* NewsDetailsCoordinator.swift in Sources */,
 				49215258275CA68200922A1F /* NavigationDelegate.swift in Sources */,
 				496203C0275CDCD8004F26C5 /* RateLimiter.swift in Sources */,
 				49215267275CA7A900922A1F /* StaticTransitionAnimation.swift in Sources */,
@@ -547,6 +578,7 @@
 				4921522F275C99E500922A1F /* NewsApi.swift in Sources */,
 				4973C098275D07940086F5C6 /* NewsItemTableViewCell.swift in Sources */,
 				49215253275CA63400922A1F /* BaseCoordinator.swift in Sources */,
+				4973C0B1275DB4A50086F5C6 /* NewsDetailsViewModel.swift in Sources */,
 				49215249275CA3FC00922A1F /* AppCoordinator.swift in Sources */,
 				49215242275CA0CD00922A1F /* NetworkConnectivity.swift in Sources */,
 				4921524B275CA5D300922A1F /* Container.swift in Sources */,
@@ -817,6 +849,14 @@
 				minimumVersion = 14.0.2;
 			};
 		};
+		4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kf99916/ProgressWebViewController.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -884,6 +924,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */;
+			productName = ProgressWebViewController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

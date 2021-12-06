@@ -31,4 +31,8 @@ final class AppDependency: AllInjectables {
   var homeViewModel: HomeViewModelType {
     HomeViewModel(self)
   }
+
+  var newsDetailsViewModel: NewsDetailsViewModelType {
+    NewsDetailsViewModel()
+  }
 }

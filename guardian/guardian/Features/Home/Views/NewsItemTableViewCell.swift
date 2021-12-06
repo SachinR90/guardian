@@ -15,10 +15,7 @@ class NewsItemTableViewCell: UITableViewCell, ReusableCell, NibLoadableView {
   func configure(newsItem: News) {
     self.title.text = newsItem.webTitle
     self.body.text = newsItem.fields?.body?.stripOutHtml()
-
-    let currentFormatter = DateFormatter()
-    currentFormatter.dateFormat = "dd-MMMM-yyyy hh:mm:ss a"
-    self.date.text = currentFormatter.string(from: newsItem.dateTime())
+    self.date.text = newsItem.formattedDate()
 
     // set thumbnail
     let imageUrl = URL(string: (newsItem.fields?.thumbnail)!)

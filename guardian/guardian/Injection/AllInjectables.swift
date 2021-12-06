@@ -16,3 +16,4 @@ typealias AllInjectables =
     & HomeRepositoryInjectable
     & NewsDAOInjectable
     & HomePersistenceServiceInjectable
+    & NewsDetailsViewModelInjectable
