@@ -6,7 +6,7 @@ This app is built using the following techinical implementations:
      - Built using [XCoordinator](https://github.com/quickbirdstudios/XCoordinator) as base
  - Dependency Injection using Protocol Composition
  - Offline first feature using [GRDB](https://github.com/groue/GRDB.swift) as local database
- - follows this successful [Git Branching Strategy](https://nvie.com/posts/a-successful-git-branching-model/) closely
+ - follows this successful [Git Branching Strategy](https://nvie.com/posts/a-successful-git-branching-model/)
 
 The App has following features:
  - Display News list by fetching from The Guardian Api
