@@ -36,6 +36,12 @@ struct News: Codable, Equatable {
     let formatter = ISO8601DateFormatter()
     return formatter.date(from: webPublicationDate!)!
   }
+
+  func formattedDate() -> String {
+    let currentFormatter = DateFormatter()
+    currentFormatter.dateFormat = "dd-MMM-yyyy hh:mm a"
+    return currentFormatter.string(from: dateTime())
+  }
 }
 
 extension News: CreatableTableRecord {

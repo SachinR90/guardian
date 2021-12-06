@@ -17,7 +17,7 @@ class HomeCoordinator: NavigationControllerCoordinator {
     super.init(router: router)
   }
 
-  typealias Dependency = HomeViewModelInjectable & ViewControllerInjectable
+  typealias Dependency = AllInjectables
 
   private(set) var dependency: Dependency
   private var vcProvider: ViewControllerProvider {
@@ -29,11 +29,20 @@ class HomeCoordinator: NavigationControllerCoordinator {
   }
 
   func makeHomeViewController() -> HomeViewController {
-    let homeViewModel = dependency.homeViewModel
+    var homeViewModel = dependency.homeViewModel
+    homeViewModel.coordinatorDelegate = self
     return vcProvider.makeHomeViewController(with: homeViewModel)
   }
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
-  func showDetails(for newItem: News) {}
+  func showDetails(for newItem: News) {
+    let detailCoordinator = NewsDetailsCoordinator(router: router, dependency: dependency, newsItem: newItem)
+    addChildCoordinator(detailCoordinator)
+    router.push(detailCoordinator,
+                hideBottomBar: true,
+                animation: .none,
+                popCompletion: { [weak self, weak detailCoordinator] in self?.removeChildCoordinator(detailCoordinator)
+                })
+  }
 }

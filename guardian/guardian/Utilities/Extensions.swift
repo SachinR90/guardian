@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Date
 
@@ -48,6 +49,15 @@ extension Error {
 // MARK: - String
 
 extension String {
+  func firstNWords(n: Int, separator: String = " ") -> String {
+    let array = components(separatedBy: separator)
+    if n >= array.count || n <= 0 {
+      return self
+    } else {
+      return array[..<n].joined(separator: separator)
+    }
+  }
+
   func json() throws -> [String: Any]? {
     let data = self.data(using: .utf8)!
     return try JSONSerialization
@@ -79,6 +89,39 @@ extension String {
 
   func stripOutHtml() -> String {
     replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+  }
+
+  func htmlAttributedString(size: CGFloat) -> NSAttributedString? {
+    let htmlTemplate = """
+    <!doctype html>
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: -apple-system;
+            font-size: \(size)px;
+          }
+        </style>
+      </head>
+      <body>
+        \(self)
+      </body>
+    </html>
+    """
+
+    guard let data = htmlTemplate.data(using: .utf8) else {
+      return nil
+    }
+
+    guard let attributedString = try? NSAttributedString(
+      data: data,
+      options: [.documentType: NSAttributedString.DocumentType.html],
+      documentAttributes: nil
+    ) else {
+      return nil
+    }
+
+    return attributedString
   }
 }
 

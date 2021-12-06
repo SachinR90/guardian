@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
   }
 
   private func setupUI() {
-    self.title = "The Guardian App"
+    self.title = "Home"
     configureNoNetworkLabel()
     configureTableView()
     viewModel.delegate = self

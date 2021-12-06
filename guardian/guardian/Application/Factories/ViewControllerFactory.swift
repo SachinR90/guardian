@@ -10,6 +10,7 @@ import UIKit
 
 protocol ViewControllerProvider {
   func makeHomeViewController(with vm: HomeViewModelType) -> HomeViewController
+  func makeNewsDetailsViewController(with vm: NewsDetailsViewModelType) -> NewsDetailsViewController
 }
 
 struct ViewControllerFactory: ViewControllerProvider {
@@ -21,5 +22,9 @@ struct ViewControllerFactory: ViewControllerProvider {
 
   func makeHomeViewController(with vm: HomeViewModelType) -> HomeViewController {
     HomeViewController(viewModel: vm)
+  }
+
+  func makeNewsDetailsViewController(with vm: NewsDetailsViewModelType) -> NewsDetailsViewController {
+    NewsDetailsViewController(viewModel: vm)
   }
 }
