@@ -19,3 +19,7 @@ The App has following features:
  
 The following features are work in progress:
  - Secure GRDB using SQLCipher
+
+### Sample  
+
+https://user-images.githubusercontent.com/22074472/145009291-63a0681f-a073-49ba-a378-1b439015c2f0.mov
