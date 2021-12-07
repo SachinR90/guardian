@@ -24,23 +24,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-JU-oFn">
-                    <rect key="frame" x="16" y="52" width="382" height="179"/>
+                    <rect key="frame" x="16" y="52" width="382" height="224"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5O-01-b3z" userLabel="newsTitle">
-                    <rect key="frame" x="16" y="272" width="382" height="0.0"/>
+                    <rect key="frame" x="16" y="317" width="382" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-yj-omM" userLabel="dateTime">
-                    <rect key="frame" x="16" y="239" width="382" height="17"/>
+                    <rect key="frame" x="16" y="284" width="382" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" systemColor="systemGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-WD-bTl">
-                    <rect key="frame" x="16" y="288" width="382" height="558"/>
+                    <rect key="frame" x="16" y="333" width="382" height="513"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -60,7 +60,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dDr-yj-omM" secondAttribute="trailing" constant="16" id="8Ri-Yq-Bem"/>
                 <constraint firstItem="l5O-01-b3z" firstAttribute="top" secondItem="dDr-yj-omM" secondAttribute="bottom" constant="16" id="T6E-qV-n2u"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l5O-01-b3z" secondAttribute="trailing" constant="16" id="bIG-fg-5wh"/>
-                <constraint firstItem="H3O-JU-oFn" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:5" id="deh-2R-yze"/>
+                <constraint firstItem="H3O-JU-oFn" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:4" id="deh-2R-yze"/>
                 <constraint firstItem="H3O-JU-oFn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="f6S-rK-MVK"/>
                 <constraint firstItem="H3O-JU-oFn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="rOV-lY-n8d"/>
                 <constraint firstItem="H3O-JU-oFn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="sQk-Ei-vvP"/>
