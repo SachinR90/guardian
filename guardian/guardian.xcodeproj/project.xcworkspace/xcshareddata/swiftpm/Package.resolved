@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/groue/GRDB.swift",
         "state": {
           "branch": null,
-          "revision": "1ea4a44bb8d5b868a6cbea31974a42bd1fde6a35",
-          "version": "5.0.0"
+          "revision": "0330365d4972c193219d8f4da4464ac0cd2b74bb",
+          "version": "5.16.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/sachin-rao-coditas/Moya.git",
         "state": {
           "branch": null,
-          "revision": "5bb2c0e1250dd7cfcd94ee84b8119f80206667d1",
-          "version": "14.0.2"
+          "revision": "7d1fcce41fea249abf2b6ccde05a26ff1ada9853",
+          "version": "15.0.1"
         }
       },
       {
@@ -48,11 +48,11 @@
       },
       {
         "package": "ReactiveSwift",
-        "repositoryURL": "https://github.com/Moya/ReactiveSwift.git",
+        "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
           "branch": null,
-          "revision": "f195d82bb30e412e70446e2b4a77e1b514099e88",
-          "version": "6.1.0"
+          "revision": "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+          "version": "6.7.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxDataSources.git",
         "state": {
           "branch": null,
-          "revision": "a18cee01c9ee55f04d0c7eb15c77a96c3648c88e",
-          "version": "4.0.1"
+          "revision": "90c29b48b628479097fe775ed1966d75ac374518",
+          "version": "5.0.2"
         }
       },
       {
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxGRDB",
         "state": {
           "branch": null,
-          "revision": "b175e9f83bb208dc6b23d78979351bd56a6172ad",
-          "version": "1.0.0"
+          "revision": "f2cd8ada998d923a2ff826b482690f5fd3a7f6de",
+          "version": "2.1.0"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift",
         "state": {
           "branch": null,
-          "revision": "cec68169a048a079f461ba203fe85636548d7a89",
-          "version": "5.1.3"
+          "revision": "7c17a6ccca06b5c107cfa4284e634562ddaf5951",
+          "version": "6.2.0"
         }
       },
       {

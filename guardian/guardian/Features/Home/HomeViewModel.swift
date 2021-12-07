@@ -97,8 +97,8 @@ class HomeViewModel: HomeViewModelType {
 
     newsDisposable = repository
       .observerLocalNewsData()
-      .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-      .observeOn(MainScheduler.instance)
+      .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+      .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] newsData in
         guard let strongSelf = self else { return }
         strongSelf.localDataPostProcessing(newsData: newsData)

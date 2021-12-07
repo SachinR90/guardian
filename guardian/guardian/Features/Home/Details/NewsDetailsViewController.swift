@@ -53,11 +53,7 @@ class NewsDetailsViewController: UIViewController {
     image.clipsToBounds = true
     newsTitle.text = viewModel.newsItem?.webTitle
     dateTime.text = viewModel.newsItem?.formattedDate()
-    DispatchQueue.main.async { [weak self] in
-      if let htmlString = self?.viewModel.newsItem?.fields?.body {
-        self?.newsBody.attributedText = htmlString.htmlAttributedString(size: 16)
-      }
-    }
+    newsBody.text = viewModel.newsItem?.fields?.body?.stripOutHtml()
   }
 
   func setupNavigationbarItem() {

@@ -49,22 +49,23 @@
 		49215283275CC75500922A1F /* NewsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215282275CC75500922A1F /* NewsDao.swift */; };
 		49215288275CCD6F00922A1F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215287275CC89100922A1F /* News.swift */; };
 		49215289275CCD7200922A1F /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215286275CC89100922A1F /* NewsResponse.swift */; };
+		494BBC73275E309D00010CF0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC72275E309D00010CF0 /* RxSwift */; };
+		494BBC75275E309D00010CF0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC74275E309D00010CF0 /* RxRelay */; };
+		494BBC77275E309D00010CF0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC76275E309D00010CF0 /* RxCocoa */; };
+		494BBC79275E309D00010CF0 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC78275E309D00010CF0 /* RxBlocking */; };
+		494BBC7C275E30DA00010CF0 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC7B275E30DA00010CF0 /* GRDB */; };
+		494BBC7F275E30E600010CF0 /* RxGRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC7E275E30E600010CF0 /* RxGRDB */; };
+		494BBC82275E310300010CF0 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC81275E310300010CF0 /* RxDataSources */; };
+		494BBC84275E310300010CF0 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC83275E310300010CF0 /* Differentiator */; };
+		494BBC87275E314600010CF0 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC86275E314600010CF0 /* ReactiveMoya */; };
+		494BBC89275E314600010CF0 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC88275E314600010CF0 /* CombineMoya */; };
+		494BBC8B275E314600010CF0 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC8A275E314600010CF0 /* RxMoya */; };
+		494BBC8D275E314600010CF0 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC8C275E314600010CF0 /* Moya */; };
 		4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */; };
 		4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DA275C899E00B4DDC4 /* Assets.xcassets */; };
 		4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */; };
-		4962039A275CD9B4004F26C5 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 49620399275CD9B4004F26C5 /* GRDB */; };
 		4962039D275CDA19004F26C5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4962039C275CDA19004F26C5 /* Kingfisher */; };
 		496203A0275CDA34004F26C5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4962039F275CDA34004F26C5 /* SnapKit */; };
-		496203A3275CDA5F004F26C5 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 496203A2275CDA5F004F26C5 /* Differentiator */; };
-		496203A5275CDA5F004F26C5 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 496203A4275CDA5F004F26C5 /* RxDataSources */; };
-		496203A8275CDA74004F26C5 /* RxGRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 496203A7275CDA74004F26C5 /* RxGRDB */; };
-		496203AB275CDA86004F26C5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 496203AA275CDA86004F26C5 /* RxSwift */; };
-		496203AD275CDA86004F26C5 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 496203AC275CDA86004F26C5 /* RxRelay */; };
-		496203AF275CDA86004F26C5 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 496203AE275CDA86004F26C5 /* RxCocoa */; };
-		496203B1275CDA86004F26C5 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 496203B0275CDA86004F26C5 /* RxBlocking */; };
-		496203B4275CDAB6004F26C5 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 496203B3275CDAB6004F26C5 /* Moya */; };
-		496203B6275CDAB6004F26C5 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 496203B5275CDAB6004F26C5 /* ReactiveMoya */; };
-		496203B8275CDAB6004F26C5 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 496203B7275CDAB6004F26C5 /* RxMoya */; };
 		496203BE275CDC8D004F26C5 /* AtomicObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203BD275CDC8D004F26C5 /* AtomicObject.swift */; };
 		496203C0275CDCD8004F26C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203BF275CDCD8004F26C5 /* RateLimiter.swift */; };
 		496203C2275CDEBE004F26C5 /* NetworkRequestDecisionPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203C1275CDEBE004F26C5 /* NetworkRequestDecisionPolicy.swift */; };
@@ -153,20 +154,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496203B8275CDAB6004F26C5 /* RxMoya in Frameworks */,
-				496203AF275CDA86004F26C5 /* RxCocoa in Frameworks */,
-				496203A3275CDA5F004F26C5 /* Differentiator in Frameworks */,
-				496203A8275CDA74004F26C5 /* RxGRDB in Frameworks */,
+				494BBC77275E309D00010CF0 /* RxCocoa in Frameworks */,
+				494BBC7F275E30E600010CF0 /* RxGRDB in Frameworks */,
+				494BBC84275E310300010CF0 /* Differentiator in Frameworks */,
+				494BBC75275E309D00010CF0 /* RxRelay in Frameworks */,
+				494BBC8B275E314600010CF0 /* RxMoya in Frameworks */,
+				494BBC82275E310300010CF0 /* RxDataSources in Frameworks */,
+				494BBC87275E314600010CF0 /* ReactiveMoya in Frameworks */,
 				496203A0275CDA34004F26C5 /* SnapKit in Frameworks */,
+				494BBC8D275E314600010CF0 /* Moya in Frameworks */,
+				494BBC7C275E30DA00010CF0 /* GRDB in Frameworks */,
 				4962039D275CDA19004F26C5 /* Kingfisher in Frameworks */,
-				496203B6275CDAB6004F26C5 /* ReactiveMoya in Frameworks */,
-				496203B4275CDAB6004F26C5 /* Moya in Frameworks */,
-				496203A5275CDA5F004F26C5 /* RxDataSources in Frameworks */,
-				4962039A275CD9B4004F26C5 /* GRDB in Frameworks */,
-				496203AD275CDA86004F26C5 /* RxRelay in Frameworks */,
+				494BBC73275E309D00010CF0 /* RxSwift in Frameworks */,
+				494BBC89275E314600010CF0 /* CombineMoya in Frameworks */,
 				4973C0AB275DB26F0086F5C6 /* ProgressWebViewController in Frameworks */,
-				496203AB275CDA86004F26C5 /* RxSwift in Frameworks */,
-				496203B1275CDA86004F26C5 /* RxBlocking in Frameworks */,
+				494BBC79275E309D00010CF0 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,20 +460,21 @@
 			);
 			name = guardian;
 			packageProductDependencies = (
-				49620399275CD9B4004F26C5 /* GRDB */,
 				4962039C275CDA19004F26C5 /* Kingfisher */,
 				4962039F275CDA34004F26C5 /* SnapKit */,
-				496203A2275CDA5F004F26C5 /* Differentiator */,
-				496203A4275CDA5F004F26C5 /* RxDataSources */,
-				496203A7275CDA74004F26C5 /* RxGRDB */,
-				496203AA275CDA86004F26C5 /* RxSwift */,
-				496203AC275CDA86004F26C5 /* RxRelay */,
-				496203AE275CDA86004F26C5 /* RxCocoa */,
-				496203B0275CDA86004F26C5 /* RxBlocking */,
-				496203B3275CDAB6004F26C5 /* Moya */,
-				496203B5275CDAB6004F26C5 /* ReactiveMoya */,
-				496203B7275CDAB6004F26C5 /* RxMoya */,
 				4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */,
+				494BBC72275E309D00010CF0 /* RxSwift */,
+				494BBC74275E309D00010CF0 /* RxRelay */,
+				494BBC76275E309D00010CF0 /* RxCocoa */,
+				494BBC78275E309D00010CF0 /* RxBlocking */,
+				494BBC7B275E30DA00010CF0 /* GRDB */,
+				494BBC7E275E30E600010CF0 /* RxGRDB */,
+				494BBC81275E310300010CF0 /* RxDataSources */,
+				494BBC83275E310300010CF0 /* Differentiator */,
+				494BBC86275E314600010CF0 /* ReactiveMoya */,
+				494BBC88275E314600010CF0 /* CombineMoya */,
+				494BBC8A275E314600010CF0 /* RxMoya */,
+				494BBC8C275E314600010CF0 /* Moya */,
 			);
 			productName = guardian;
 			productReference = 4959D3CB275C899D00B4DDC4 /* guardian.app */;
@@ -501,14 +504,14 @@
 			);
 			mainGroup = 4959D3C2275C899D00B4DDC4;
 			packageReferences = (
-				49620398275CD9B4004F26C5 /* XCRemoteSwiftPackageReference "GRDB" */,
 				4962039B275CDA19004F26C5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				4962039E275CDA34004F26C5 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				496203A1275CDA5F004F26C5 /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				496203A6275CDA74004F26C5 /* XCRemoteSwiftPackageReference "RxGRDB" */,
-				496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */,
 				4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */,
+				494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */,
+				494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */,
+				494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 4959D3CC275C899D00B4DDC4 /* Products */;
 			projectDirPath = "";
@@ -732,15 +735,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UW6N56THP5;
 				INFOPLIST_FILE = guardian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.guardian;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoptalk.meetup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -753,15 +757,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UW6N56THP5;
 				INFOPLIST_FILE = guardian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.guardian;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoptalk.meetup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -793,12 +798,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		49620398275CD9B4004F26C5 /* XCRemoteSwiftPackageReference "GRDB" */ = {
+		494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+		494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift";
 			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.16.0;
+			};
+		};
+		494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGRDB";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sachin-rao-coditas/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.1;
 			};
 		};
 		4962039B275CDA19004F26C5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -817,38 +854,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		496203A1275CDA5F004F26C5 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
-			};
-		};
-		496203A6275CDA74004F26C5 /* XCRemoteSwiftPackageReference "RxGRDB" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxGRDB";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
-			};
-		};
-		496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sachin-rao-coditas/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.2;
-			};
-		};
 		4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kf99916/ProgressWebViewController.git";
@@ -860,10 +865,65 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49620399275CD9B4004F26C5 /* GRDB */ = {
+		494BBC72275E309D00010CF0 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 49620398275CD9B4004F26C5 /* XCRemoteSwiftPackageReference "GRDB" */;
+			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		494BBC74275E309D00010CF0 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		494BBC76275E309D00010CF0 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		494BBC78275E309D00010CF0 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		494BBC7B275E30DA00010CF0 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */;
 			productName = GRDB;
+		};
+		494BBC7E275E30E600010CF0 /* RxGRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */;
+			productName = RxGRDB;
+		};
+		494BBC81275E310300010CF0 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		494BBC83275E310300010CF0 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		494BBC86275E314600010CF0 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		494BBC88275E314600010CF0 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		494BBC8A275E314600010CF0 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		494BBC8C275E314600010CF0 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		4962039C275CDA19004F26C5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -874,56 +934,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4962039E275CDA34004F26C5 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		496203A2275CDA5F004F26C5 /* Differentiator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A1275CDA5F004F26C5 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = Differentiator;
-		};
-		496203A4275CDA5F004F26C5 /* RxDataSources */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A1275CDA5F004F26C5 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = RxDataSources;
-		};
-		496203A7275CDA74004F26C5 /* RxGRDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A6275CDA74004F26C5 /* XCRemoteSwiftPackageReference "RxGRDB" */;
-			productName = RxGRDB;
-		};
-		496203AA275CDA86004F26C5 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		496203AC275CDA86004F26C5 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		496203AE275CDA86004F26C5 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		496203B0275CDA86004F26C5 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203A9275CDA86004F26C5 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		496203B3275CDAB6004F26C5 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		496203B5275CDAB6004F26C5 /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		496203B7275CDAB6004F26C5 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 496203B2275CDAB6004F26C5 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 		4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */ = {
 			isa = XCSwiftPackageProductDependency;

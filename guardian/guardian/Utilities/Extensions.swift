@@ -90,38 +90,29 @@ extension String {
   func stripOutHtml() -> String {
     replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
   }
+}
 
-  func htmlAttributedString(size: CGFloat) -> NSAttributedString? {
-    let htmlTemplate = """
-    <!doctype html>
-    <html>
-      <head>
-        <style>
-          body {
-            font-family: -apple-system;
-            font-size: \(size)px;
-          }
-        </style>
-      </head>
-      <body>
-        \(self)
-      </body>
-    </html>
-    """
+extension UIColor {
+  var hexString: String {
+    let cgColorInRGB = cgColor.converted(to: CGColorSpace(name: CGColorSpace.sRGB)!, intent: .defaultIntent, options: nil)!
+    let colorRef = cgColorInRGB.components
+    let r = colorRef?[0] ?? 0
+    let g = colorRef?[1] ?? 0
+    let b = ((colorRef?.count ?? 0) > 2 ? colorRef?[2] : g) ?? 0
+    let a = cgColor.alpha
 
-    guard let data = htmlTemplate.data(using: .utf8) else {
-      return nil
+    var color = String(
+      format: "#%02lX%02lX%02lX",
+      lroundf(Float(r * 255)),
+      lroundf(Float(g * 255)),
+      lroundf(Float(b * 255))
+    )
+
+    if a < 1 {
+      color += String(format: "%02lX", lroundf(Float(a * 255)))
     }
 
-    guard let attributedString = try? NSAttributedString(
-      data: data,
-      options: [.documentType: NSAttributedString.DocumentType.html],
-      documentAttributes: nil
-    ) else {
-      return nil
-    }
-
-    return attributedString
+    return color
   }
 }
 

@@ -5,11 +5,13 @@
 //  Created by Sachin Rao on 05/12/21.
 //
 
+import BackgroundTasks
 import Foundation
 import GRDB
 import UIKit
 
 class ApplicationController {
+  private let bgAppRefreshTaskIdentier = "com.example.guardian.backgroundAppRefreshIdentifier"
   lazy var appNavigationController = UINavigationController()
   lazy var appRouter = NavigationRouter(navigationController: appNavigationController)
   private var appCoordinator: AppCoordinator!
@@ -31,6 +33,7 @@ class ApplicationController {
     window?.makeKeyAndVisible()
 
     appCoordinator.start()
+    registerForBGAppRefresh()
   }
 
   private func configureAppAppearance() {
@@ -43,6 +46,8 @@ class ApplicationController {
     }
   }
 }
+
+// MARK: SETUP DATABASE
 
 extension ApplicationController {
   private func setupDatabase() throws -> DatabaseQueue {
@@ -61,5 +66,53 @@ extension ApplicationController {
     try appDependency.persistenceStore.setup()
 
     return dbQueue
+  }
+}
+
+// MARK: BGAppRefresh
+
+extension ApplicationController {
+  func registerForBGAppRefresh() {
+    if UIApplication.shared.backgroundRefreshStatus != .available {
+      return
+    }
+    BGTaskScheduler.shared.register(forTaskWithIdentifier: bgAppRefreshTaskIdentier, using: nil) { [weak self] task in
+      print("BackgroundAppRefreshTaskScheduler is executed NOW!")
+      print("Background time remaining: \(UIApplication.shared.backgroundTimeRemaining)s")
+      task.expirationHandler = {
+        task.setTaskCompleted(success: false)
+      }
+      self?.appDependency.homeViewModel.refreshRemoteData { count in
+        if count > 0 {
+          task.setTaskCompleted(success: true)
+        } else {
+          task.setTaskCompleted(success: false)
+        }
+      }
+    }
+  }
+
+  func submitTaskToBGTaskScheduler() {
+    if UIApplication.shared.backgroundRefreshStatus != .available {
+      return
+    }
+    do {
+      let backgroundAppRefreshTaskRequest = BGAppRefreshTaskRequest(identifier: bgAppRefreshTaskIdentier)
+      let earliestDate = getNextEarliestDate()
+      print(earliestDate)
+      backgroundAppRefreshTaskRequest.earliestBeginDate = earliestDate
+      try BGTaskScheduler.shared.submit(backgroundAppRefreshTaskRequest)
+      print("Submitted task request")
+    } catch {
+      print("Failed to submit BGTask: \(error) \(error.localizedDescription)")
+    }
+  }
+
+  private func getNextEarliestDate() -> Date {
+    let now = Date()
+    let calendar = Calendar.current
+    let components = DateComponents(calendar: calendar, hour: 6) // <- 06:00 = 6am
+    let next6Am = calendar.nextDate(after: now, matching: components, matchingPolicy: .nextTime)!
+    return next6Am
   }
 }
