@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,23 +49,9 @@
 		49215283275CC75500922A1F /* NewsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215282275CC75500922A1F /* NewsDao.swift */; };
 		49215288275CCD6F00922A1F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215287275CC89100922A1F /* News.swift */; };
 		49215289275CCD7200922A1F /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49215286275CC89100922A1F /* NewsResponse.swift */; };
-		494BBC73275E309D00010CF0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC72275E309D00010CF0 /* RxSwift */; };
-		494BBC75275E309D00010CF0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC74275E309D00010CF0 /* RxRelay */; };
-		494BBC77275E309D00010CF0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC76275E309D00010CF0 /* RxCocoa */; };
-		494BBC79275E309D00010CF0 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC78275E309D00010CF0 /* RxBlocking */; };
-		494BBC7C275E30DA00010CF0 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC7B275E30DA00010CF0 /* GRDB */; };
-		494BBC7F275E30E600010CF0 /* RxGRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC7E275E30E600010CF0 /* RxGRDB */; };
-		494BBC82275E310300010CF0 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC81275E310300010CF0 /* RxDataSources */; };
-		494BBC84275E310300010CF0 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC83275E310300010CF0 /* Differentiator */; };
-		494BBC87275E314600010CF0 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC86275E314600010CF0 /* ReactiveMoya */; };
-		494BBC89275E314600010CF0 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC88275E314600010CF0 /* CombineMoya */; };
-		494BBC8B275E314600010CF0 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC8A275E314600010CF0 /* RxMoya */; };
-		494BBC8D275E314600010CF0 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 494BBC8C275E314600010CF0 /* Moya */; };
 		4959D3CF275C899D00B4DDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959D3CE275C899D00B4DDC4 /* AppDelegate.swift */; };
 		4959D3DB275C899E00B4DDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DA275C899E00B4DDC4 /* Assets.xcassets */; };
 		4959D3DE275C899E00B4DDC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4959D3DC275C899E00B4DDC4 /* LaunchScreen.storyboard */; };
-		4962039D275CDA19004F26C5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4962039C275CDA19004F26C5 /* Kingfisher */; };
-		496203A0275CDA34004F26C5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4962039F275CDA34004F26C5 /* SnapKit */; };
 		496203BE275CDC8D004F26C5 /* AtomicObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203BD275CDC8D004F26C5 /* AtomicObject.swift */; };
 		496203C0275CDCD8004F26C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203BF275CDCD8004F26C5 /* RateLimiter.swift */; };
 		496203C2275CDEBE004F26C5 /* NetworkRequestDecisionPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496203C1275CDEBE004F26C5 /* NetworkRequestDecisionPolicy.swift */; };
@@ -78,13 +64,14 @@
 		4973C0A1275D55FD0086F5C6 /* NewsFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0A0275D55FD0086F5C6 /* NewsFields.swift */; };
 		4973C0A4275DB0CE0086F5C6 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0A2275DB0CE0086F5C6 /* NewsDetailsViewController.swift */; };
 		4973C0A5275DB0CF0086F5C6 /* NewsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4973C0A3275DB0CE0086F5C6 /* NewsDetailsViewController.xib */; };
-		4973C0AB275DB26F0086F5C6 /* ProgressWebViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */; };
 		4973C0AD275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0AC275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift */; };
 		4973C0AF275DB4280086F5C6 /* NewsDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0AE275DB4280086F5C6 /* NewsDetailsCoordinator.swift */; };
 		4973C0B1275DB4A50086F5C6 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973C0B0275DB4A50086F5C6 /* NewsDetailsViewModel.swift */; };
+		4A4B8DF1319749B2290B5EED /* Pods_guardian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483AE03DAC74AD641E17510 /* Pods_guardian.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0A8989948B6102A384BF46 /* Pods-guardian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guardian.debug.xcconfig"; path = "Target Support Files/Pods-guardian/Pods-guardian.debug.xcconfig"; sourceTree = "<group>"; };
 		4921521A275C930300922A1F /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		4921521C275C932E00922A1F /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		4921521F275C940B00922A1F /* AllInjectables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInjectables.swift; sourceTree = "<group>"; };
@@ -147,6 +134,8 @@
 		4973C0AC275DB3090086F5C6 /* BrowerViewControllerDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowerViewControllerDisplayable.swift; sourceTree = "<group>"; };
 		4973C0AE275DB4280086F5C6 /* NewsDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsCoordinator.swift; sourceTree = "<group>"; };
 		4973C0B0275DB4A50086F5C6 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
+		BC51B7E9FE77DB937CE33EBC /* Pods-guardian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-guardian.release.xcconfig"; path = "Target Support Files/Pods-guardian/Pods-guardian.release.xcconfig"; sourceTree = "<group>"; };
+		C483AE03DAC74AD641E17510 /* Pods_guardian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_guardian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,27 +143,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494BBC77275E309D00010CF0 /* RxCocoa in Frameworks */,
-				494BBC7F275E30E600010CF0 /* RxGRDB in Frameworks */,
-				494BBC84275E310300010CF0 /* Differentiator in Frameworks */,
-				494BBC75275E309D00010CF0 /* RxRelay in Frameworks */,
-				494BBC8B275E314600010CF0 /* RxMoya in Frameworks */,
-				494BBC82275E310300010CF0 /* RxDataSources in Frameworks */,
-				494BBC87275E314600010CF0 /* ReactiveMoya in Frameworks */,
-				496203A0275CDA34004F26C5 /* SnapKit in Frameworks */,
-				494BBC8D275E314600010CF0 /* Moya in Frameworks */,
-				494BBC7C275E30DA00010CF0 /* GRDB in Frameworks */,
-				4962039D275CDA19004F26C5 /* Kingfisher in Frameworks */,
-				494BBC73275E309D00010CF0 /* RxSwift in Frameworks */,
-				494BBC89275E314600010CF0 /* CombineMoya in Frameworks */,
-				4973C0AB275DB26F0086F5C6 /* ProgressWebViewController in Frameworks */,
-				494BBC79275E309D00010CF0 /* RxBlocking in Frameworks */,
+				4A4B8DF1319749B2290B5EED /* Pods_guardian.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160E35BDE10BCA86F0994D02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C483AE03DAC74AD641E17510 /* Pods_guardian.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49215219275C8EC000922A1F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +361,8 @@
 			children = (
 				4959D3CD275C899D00B4DDC4 /* guardian */,
 				4959D3CC275C899D00B4DDC4 /* Products */,
+				F002DA554AB98B53349A2A64 /* Pods */,
+				160E35BDE10BCA86F0994D02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -443,6 +428,15 @@
 			path = BrowserViewControllerDisplayable;
 			sourceTree = "<group>";
 		};
+		F002DA554AB98B53349A2A64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A8989948B6102A384BF46 /* Pods-guardian.debug.xcconfig */,
+				BC51B7E9FE77DB937CE33EBC /* Pods-guardian.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,9 +444,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4959D3E2275C899E00B4DDC4 /* Build configuration list for PBXNativeTarget "guardian" */;
 			buildPhases = (
+				C0BDB88326D751BB48FC57CA /* [CP] Check Pods Manifest.lock */,
 				4959D3C7275C899D00B4DDC4 /* Sources */,
 				4959D3C8275C899D00B4DDC4 /* Frameworks */,
 				4959D3C9275C899D00B4DDC4 /* Resources */,
+				6B94CA9E6D488DA4DED77AF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,21 +456,6 @@
 			);
 			name = guardian;
 			packageProductDependencies = (
-				4962039C275CDA19004F26C5 /* Kingfisher */,
-				4962039F275CDA34004F26C5 /* SnapKit */,
-				4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */,
-				494BBC72275E309D00010CF0 /* RxSwift */,
-				494BBC74275E309D00010CF0 /* RxRelay */,
-				494BBC76275E309D00010CF0 /* RxCocoa */,
-				494BBC78275E309D00010CF0 /* RxBlocking */,
-				494BBC7B275E30DA00010CF0 /* GRDB */,
-				494BBC7E275E30E600010CF0 /* RxGRDB */,
-				494BBC81275E310300010CF0 /* RxDataSources */,
-				494BBC83275E310300010CF0 /* Differentiator */,
-				494BBC86275E314600010CF0 /* ReactiveMoya */,
-				494BBC88275E314600010CF0 /* CombineMoya */,
-				494BBC8A275E314600010CF0 /* RxMoya */,
-				494BBC8C275E314600010CF0 /* Moya */,
 			);
 			productName = guardian;
 			productReference = 4959D3CB275C899D00B4DDC4 /* guardian.app */;
@@ -504,14 +485,6 @@
 			);
 			mainGroup = 4959D3C2275C899D00B4DDC4;
 			packageReferences = (
-				4962039B275CDA19004F26C5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				4962039E275CDA34004F26C5 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */,
-				494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */,
-				494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */,
-				494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 4959D3CC275C899D00B4DDC4 /* Products */;
 			projectDirPath = "";
@@ -536,6 +509,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B94CA9E6D488DA4DED77AF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-guardian/Pods-guardian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-guardian/Pods-guardian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-guardian/Pods-guardian-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0BDB88326D751BB48FC57CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-guardian-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4959D3C7275C899D00B4DDC4 /* Sources */ = {
@@ -732,6 +747,7 @@
 		};
 		4959D3E3275C899E00B4DDC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0A8989948B6102A384BF46 /* Pods-guardian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -754,6 +770,7 @@
 		};
 		4959D3E4275C899E00B4DDC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC51B7E9FE77DB937CE33EBC /* Pods-guardian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -796,151 +813,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.2.0;
-			};
-		};
-		494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/groue/GRDB.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.16.0;
-			};
-		};
-		494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxGRDB";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-		494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.2;
-			};
-		};
-		494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sachin-rao-coditas/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.1;
-			};
-		};
-		4962039B275CDA19004F26C5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.1.1;
-			};
-		};
-		4962039E275CDA34004F26C5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kf99916/ProgressWebViewController.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		494BBC72275E309D00010CF0 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		494BBC74275E309D00010CF0 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		494BBC76275E309D00010CF0 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		494BBC78275E309D00010CF0 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC71275E309D00010CF0 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		494BBC7B275E30DA00010CF0 /* GRDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC7A275E30D900010CF0 /* XCRemoteSwiftPackageReference "GRDB" */;
-			productName = GRDB;
-		};
-		494BBC7E275E30E600010CF0 /* RxGRDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC7D275E30E600010CF0 /* XCRemoteSwiftPackageReference "RxGRDB" */;
-			productName = RxGRDB;
-		};
-		494BBC81275E310300010CF0 /* RxDataSources */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = RxDataSources;
-		};
-		494BBC83275E310300010CF0 /* Differentiator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC80275E310300010CF0 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = Differentiator;
-		};
-		494BBC86275E314600010CF0 /* ReactiveMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = ReactiveMoya;
-		};
-		494BBC88275E314600010CF0 /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
-		};
-		494BBC8A275E314600010CF0 /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
-		};
-		494BBC8C275E314600010CF0 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 494BBC85275E314600010CF0 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		4962039C275CDA19004F26C5 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4962039B275CDA19004F26C5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		4962039F275CDA34004F26C5 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4962039E275CDA34004F26C5 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		4973C0AA275DB26F0086F5C6 /* ProgressWebViewController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4973C0A9275DB26F0086F5C6 /* XCRemoteSwiftPackageReference "ProgressWebViewController" */;
-			productName = ProgressWebViewController;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4959D3C3275C899D00B4DDC4 /* Project object */;
 }

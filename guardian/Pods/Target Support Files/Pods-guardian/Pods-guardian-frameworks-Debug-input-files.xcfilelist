@@ -1,0 +1,12 @@
+${PODS_ROOT}/Target Support Files/Pods-guardian/Pods-guardian-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/ProgressWebViewController/ProgressWebViewController.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxGRDB/RxGRDB.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

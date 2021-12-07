@@ -7,6 +7,7 @@
 
 import Foundation
 import GRDB
+import SQLCipher
 
 struct News: Codable, Equatable {
   let id: String?

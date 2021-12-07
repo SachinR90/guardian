@@ -9,6 +9,7 @@ import BackgroundTasks
 import Foundation
 import GRDB
 import UIKit
+import SQLCipher
 
 class ApplicationController {
   private let bgAppRefreshTaskIdentier = "com.example.guardian.backgroundAppRefreshIdentifier"
@@ -56,7 +57,10 @@ extension ApplicationController {
       .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
       .appendingPathComponent("Guardian.sqlite.db")
 
-    let config = Configuration()
+    var config = Configuration()
+    config.prepareDatabase { db in
+      try db.usePassphrase("guardian@123")
+    }
     // config.trace = { print($0) }     // Prints all SQL statements
     let dbQueue = try DatabaseQueue(path: databaseURL.path, configuration: config)
 

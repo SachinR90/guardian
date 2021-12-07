@@ -7,7 +7,6 @@
 
 import Foundation
 import Moya
-import RxMoya
 import RxSwift
 
 func JSONResponseDataFormatter(_ data: Data) -> String {
