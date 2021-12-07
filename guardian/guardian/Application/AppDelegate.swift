@@ -17,4 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     appController.start(with: window)
     return true
   }
+
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    appController.submitTaskToBGTaskScheduler()
+  }
 }

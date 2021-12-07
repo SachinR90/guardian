@@ -517,25 +517,6 @@ extension UIColor {
             blue: .random(),
             alpha: 1.0)
   }
-
-  var hexString: String {
-    let colorRef = cgColor.components
-
-    let r: CGFloat = colorRef![0]
-    let g: CGFloat = colorRef![1]
-    let b: CGFloat = colorRef![2]
-
-    return NSString(format: "%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255))) as String
-  }
-}
-
-func randomImageUrlString() -> String {
-  let randomColorHex = UIColor.random().hexString
-  return "http://placehold.it/400x400/\(randomColorHex)"
-}
-
-func randomImageUrl() -> URL? {
-  URL(string: randomImageUrlString())
 }
 
 extension UIDevice {

@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                    <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CNy-L2-13f">
                     <rect key="frame" x="186" y="427" width="42" height="42"/>
@@ -51,7 +51,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZCc-tE-VXe" secondAttribute="trailing" id="C4S-5O-VwZ"/>
                 <constraint firstItem="CNy-L2-13f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kbt-x1-ILf"/>
@@ -69,7 +69,7 @@
     </objects>
     <designables>
         <designable name="jEQ-jl-z5z">
-            <size key="intrinsicContentSize" width="252" height="17"/>
+            <size key="intrinsicContentSize" width="272" height="27"/>
         </designable>
     </designables>
     <resources>

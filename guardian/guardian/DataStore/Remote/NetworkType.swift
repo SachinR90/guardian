@@ -84,7 +84,7 @@ extension NetworkType {
         self.processSuccess(response: response, for: target, endpoint: endpoint)
       })
       // process failure on onError, convert it to AppError and rethrow
-      .catchError { (moyaError: Error) -> Observable<Response> in
+      .catch { (moyaError: Error) -> Observable<Response> in
 
         // process failure
         if let error = moyaError as? MoyaError {
