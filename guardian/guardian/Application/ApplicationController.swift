@@ -6,9 +6,16 @@
 //
 
 import BackgroundTasks
+import Firebase
 import Foundation
 import GRDB
 import UIKit
+
+public func printToConsole(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+  #if DEBUG
+  print(items, separator: separator, terminator: terminator)
+  #endif
+}
 
 class ApplicationController {
   private let bgAppRefreshTaskIdentier = "com.example.guardian.backgroundAppRefreshIdentifier"
@@ -28,10 +35,9 @@ class ApplicationController {
     }
     appDependency.networkConnectivity.startMonitoring()
     appCoordinator = AppCoordinator(router: appRouter, dependencies: appDependency)
-
     window?.rootViewController = appCoordinator.toPresent()
     window?.makeKeyAndVisible()
-
+    FirebaseApp.configure()
     appCoordinator.start()
     registerForBGAppRefresh()
   }
@@ -57,7 +63,6 @@ extension ApplicationController {
       .appendingPathComponent("Guardian.sqlite.db")
 
     let config = Configuration()
-    // config.trace = { print($0) }     // Prints all SQL statements
     let dbQueue = try DatabaseQueue(path: databaseURL.path, configuration: config)
 
     CurrentDB = GRDBWorld(database: { dbQueue })
@@ -77,15 +82,16 @@ extension ApplicationController {
       return
     }
     BGTaskScheduler.shared.register(forTaskWithIdentifier: bgAppRefreshTaskIdentier, using: nil) { [weak self] task in
-      print("BackgroundAppRefreshTaskScheduler is executed NOW!")
-      print("Background time remaining: \(UIApplication.shared.backgroundTimeRemaining)s")
+      printToConsole("BackgroundAppRefreshTaskScheduler is executed NOW!")
+      printToConsole("Background time remaining: \(UIApplication.shared.backgroundTimeRemaining)s")
       task.expirationHandler = {
         task.setTaskCompleted(success: false)
       }
-      self?.appDependency.homeViewModel.refreshRemoteData { count in
-        if count > 0 {
+      self?.appDependency.homeRespository.loadRemoteNews(query: "Afghanistan", page: 0) { status in
+        switch status {
+        case .success:
           task.setTaskCompleted(success: true)
-        } else {
+        case .failure:
           task.setTaskCompleted(success: false)
         }
       }
@@ -99,12 +105,12 @@ extension ApplicationController {
     do {
       let backgroundAppRefreshTaskRequest = BGAppRefreshTaskRequest(identifier: bgAppRefreshTaskIdentier)
       let earliestDate = getNextEarliestDate()
-      print(earliestDate)
+      printToConsole(earliestDate)
       backgroundAppRefreshTaskRequest.earliestBeginDate = earliestDate
       try BGTaskScheduler.shared.submit(backgroundAppRefreshTaskRequest)
-      print("Submitted task request")
+      printToConsole("Submitted task request")
     } catch {
-      print("Failed to submit BGTask: \(error) \(error.localizedDescription)")
+      printToConsole("Failed to submit BGTask: \(error) \(error.localizedDescription)")
     }
   }
 

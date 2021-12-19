@@ -10,10 +10,13 @@ import Moya
 import RxSwift
 
 protocol HomeRepositoryType {
-  func observerLocalNewsData() -> Observable<[News]>
+  func loadLocalNews(limit: Int,
+                     page: Int,
+                     completion: @escaping (Result<NewsResponse, Error>) -> Void)
   @discardableResult
-  func loadRemoteNews(query:String,completion: @escaping (Result<Int, Error>) -> Void) -> NetworkCancellable
-  func localTotalCountOfAllNews() throws -> Int
+  func loadRemoteNews(query: String, page: Int,
+                      completion: @escaping (Result<NewsResponse, Error>) -> Void) -> NetworkCancellable
+  func localNewsCount() throws -> Int
 }
 
 class HomeRepository: HomeRepositoryType {
@@ -28,23 +31,29 @@ class HomeRepository: HomeRepositoryType {
   private let homePersistenceService: HomePersistenceServiceable
   private let network: Network
 
-  func observerLocalNewsData() -> Observable<[News]> {
-    homePersistenceService.localNewsObservable()
-  }
-
-  func loadRemoteNews(query:String,completion: @escaping (Result<Int, Error>) -> Void) -> NetworkCancellable {
-    network.request(target: .getNews(query: query)) { [weak self] result in
+  func loadRemoteNews(query: String, page: Int, completion: @escaping (Result<NewsResponse, Error>) -> Void) -> NetworkCancellable {
+    network.request(target: .getNews(query: query, page: page)) { [weak self] result in
       do {
         let newsResonse = try result.get().mapValue(NewsResponse.self)
         try self?.homePersistenceService.saveNewsList(newsResonse.results ?? [])
-        completion(.success(newsResonse.results?.count ?? 0))
+        completion(.success(newsResonse))
       } catch {
         completion(.failure(error))
       }
     }
   }
 
-  func localTotalCountOfAllNews() throws -> Int {
-    try homePersistenceService.totalCountOfAllNews()
+  func loadLocalNews(limit: Int, page: Int, completion: @escaping (Result<NewsResponse, Error>) -> Void) {
+    do {
+      let results = try homePersistenceService.getNewsList(limit: limit, page: page)
+      let response = NewsResponse(pageSize: results.count, currentPage: page, results: results)
+      completion(.success(response))
+    } catch {
+      completion(.failure(error))
+    }
+  }
+
+  func localNewsCount() throws -> Int {
+    try homePersistenceService.getNewsCount()
   }
 }

@@ -17,3 +17,7 @@ typealias AllInjectables =
     & NewsDAOInjectable
     & HomePersistenceServiceInjectable
     & NewsDetailsViewModelInjectable
+    & RemoteConfigInjectable
+    & NewsApiEndPointProviderInjectable
+    & SecuredDataStoreInjectable
+    & SplashViewModelInjectable

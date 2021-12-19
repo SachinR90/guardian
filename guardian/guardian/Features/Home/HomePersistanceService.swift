@@ -13,8 +13,8 @@ import RxSwift
 protocol HomePersistenceServiceable {
   func saveNewsList(_ news: [News]) throws
   func getNewsList() throws -> [News]
-  func localNewsObservable() -> Observable<[News]>
-  func totalCountOfAllNews() throws -> Int
+  func getNewsList(limit: Int, page: Int) throws -> [News]
+  func getNewsCount() throws -> Int
 }
 
 struct HomePersistenceService: HomePersistenceServiceable {
@@ -29,27 +29,28 @@ struct HomePersistenceService: HomePersistenceServiceable {
 
   func getNewsList() throws -> [News] {
     try dbQueue.read { db in
-      try newsDAO.getNewsList(db: db)
+      try newsDAO.getAllNews(db: db)
+    }
+  }
+
+  func getNewsList(limit: Int, page: Int) throws -> [News] {
+    try dbQueue.read { db in
+      try newsDAO.getNewsList(limit: limit, offset: page, db: db)
     }
   }
 
   func saveNewsList(_ news: [News]) throws {
-    try dbQueue.write { db in
+    try dbQueue.inTransaction { db in
       try news.forEach { newsItem in
         try newsDAO.upsertNews(news: newsItem, db: db)
       }
+      return .commit
     }
   }
 
-  func localNewsObservable() -> Observable<[News]> {
-    ValueObservation.tracking { db -> [News] in
-      try self.newsDAO.getNewsList(db: db)
-    }.rx.observe(in: dbQueue).asObservable()
-  }
-
-  func totalCountOfAllNews() throws -> Int {
+  func getNewsCount() throws -> Int {
     try dbQueue.read { db in
-      try News.fetchCount(db)
+      try newsDAO.getNewsCount(db: db)
     }
   }
 }

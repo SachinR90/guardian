@@ -6,10 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 import UIKit
-protocol HomeCoordinatorDelegate: NSObject {
-  func showDetails(for newItem: News)
-}
 
 class HomeCoordinator: NavigationControllerCoordinator {
   init(router: NavigationRouter, dependency: Dependency) {
@@ -19,6 +17,7 @@ class HomeCoordinator: NavigationControllerCoordinator {
 
   typealias Dependency = AllInjectables
 
+  private let disposeBag = DisposeBag()
   private(set) var dependency: Dependency
   private var vcProvider: ViewControllerProvider {
     dependency.viewControllerProvider
@@ -29,13 +28,16 @@ class HomeCoordinator: NavigationControllerCoordinator {
   }
 
   func makeHomeViewController() -> HomeViewController {
-    var homeViewModel = dependency.homeViewModel
-    homeViewModel.coordinatorDelegate = self
+    let homeViewModel = dependency.homeViewModel
+    homeViewModel.onShowDetailEvent.observe(on: MainScheduler.instance).subscribe { [weak self] news in
+      guard let self = self, let news = news.element else { return }
+      self.showDetails(for: news)
+    }.disposed(by: disposeBag)
     return vcProvider.makeHomeViewController(with: homeViewModel)
   }
 }
 
-extension HomeCoordinator: HomeCoordinatorDelegate {
+extension HomeCoordinator {
   func showDetails(for newItem: News) {
     let detailCoordinator = NewsDetailsCoordinator(router: router, dependency: dependency, newsItem: newItem)
     addChildCoordinator(detailCoordinator)
