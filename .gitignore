@@ -121,3 +121,4 @@ iOSInjectionProject/
 # c.f. http://www.westwind.com/reference/os-x/invisibles.html
 
 *.swp
+GoogleService-Info.plist
