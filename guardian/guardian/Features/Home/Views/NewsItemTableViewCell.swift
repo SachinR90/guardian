@@ -12,16 +12,25 @@ class NewsItemTableViewCell: UITableViewCell, ReusableCell, NibLoadableView {
   @IBOutlet var title: UILabel!
   @IBOutlet var body: UILabel!
   @IBOutlet var date: UILabel!
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView?.kf.cancelDownloadTask()
+    // second, prevent kingfisher from setting previous image
+    imageView?.kf.setImage(with: URL(string: ""))
+    imageView?.image = nil
+  }
+
   func configure(newsItem: News) {
-    self.title.text = newsItem.webTitle
-    self.body.text = newsItem.fields?.body?.stripOutHtml()
-    self.date.text = newsItem.formattedDate()
+    self.title.text = newsItem.webTitle?.trimmed()
+    self.body.text = newsItem.fields?.body?.stripOutHtml().trimmed()
+    self.date.text = newsItem.formattedDate().trimmed()
 
     // set thumbnail
-    let imageUrl = URL(string: (newsItem.fields?.thumbnail)!)
-    self.thumbnail.kf.indicatorType = .activity
-    self.thumbnail.kf.setImage(with: imageUrl, options: [.transition(.fade(0.2))])
-    self.thumbnail.layer.cornerRadius = 8
-    self.thumbnail.clipsToBounds = true
+    if let imageUrl = newsItem.fields?.thumbnail, let url = URL(string: imageUrl) {
+      self.thumbnail.kf.indicatorType = .activity
+      self.thumbnail.kf.setImage(with: url, options: [.transition(.fade(0.3))])
+      self.thumbnail.layer.cornerRadius = 8
+      self.thumbnail.clipsToBounds = true
+    }
   }
 }

@@ -6,26 +6,32 @@
 //
 
 import Foundation
+import GRDB
+import RxCocoa
 import RxSwift
-
-protocol HomeViewModelType {
-  func getNumberofRows() -> Int
-  func getNews(at index: Int) -> News
-  var delegate: HomeViewModelDelegate? { get set }
-  @discardableResult func refreshRemoteData(completion: ((Int) -> Void)?) -> Bool
-  func showDetails(for indexPath: IndexPath)
-  var coordinatorDelegate: HomeCoordinatorDelegate? { get set }
-  func resetAndRefreshData()
-  func loadLocalData()
+enum HomeViewState: Equatable {
+  case none
+  case viewState(_ value: UIViewControllerState)
+  case isRefreshing(_ value: Bool)
+  case isLoadingMore(_ value: Bool)
 }
 
-protocol HomeViewModelDelegate: AnyObject {
-  func showSpinner()
-  func hideSpinner()
-  func hideRefreshingControl()
-  func reloadTable()
-  func showErrorMessage(message: String)
-  func hideErrorMessage()
+protocol HomeViewModelType {
+  // tableViewMethods
+  func getNumberofRows() -> Int
+  func getNews(at index: Int) -> News
+  func showDetails(for indexPath: IndexPath)
+
+  var onStateChange: Observable<HomeViewState> { get }
+
+  var onShowDetailEvent: Observable<News> { get }
+
+  // use this for pull to refresh
+  func resetAndRefreshData()
+
+  // load resources
+  func initialLoad()
+  func loadMore()
 }
 
 class HomeViewModel: HomeViewModelType {
@@ -35,174 +41,216 @@ class HomeViewModel: HomeViewModelType {
   }
 
   deinit {
+    cancellableRequest?.cancel()
+    cancellableRequest = nil
     newsDisposable?.dispose()
   }
 
-  typealias Dependency =
-    HomeRepositoryInjectable
+  typealias Dependency = HomeRepositoryInjectable
 
   // MARK: Private Members
 
+  private final let query = "Afghanistan"
+  private final let dbPageLimit = 20
   private let disposeBag = DisposeBag()
   private let dependency: Dependency
   private let repository: HomeRepositoryType
   private var newsDisposable: Disposable?
-  private var newsList = [News]()
+  private let _onStateChange = BehaviorRelay<HomeViewState>(value: .none)
+  private let _onShowDetailsEvent = PublishSubject<News>()
+  private var cancellableRequest: NetworkCancellable?
 
-  weak var delegate: HomeViewModelDelegate?
-  weak var coordinatorDelegate: HomeCoordinatorDelegate?
-  private let rateLimiter = RateLimiter(timeInterval: 5)
-  private let networkRequestDecisionPolicy = NetworkRequestDecisionPolicy()
+  // MARK: MEMBERS
+
+  var newsItem: [News] = []
+
+  var currentDBPage: Int = 1
+  var currentNetworkPage: Int = 1
+
+  var onStateChange: Observable<HomeViewState> {
+    _onStateChange.asObservable()
+  }
+
+  var onShowDetailEvent: Observable<News> {
+    _onShowDetailsEvent.asObservable()
+  }
+
+  func getNumberofRows() -> Int {
+    newsItem.count
+  }
+
+  func getNews(at index: Int) -> News {
+    newsItem[index]
+  }
+
+  func showDetails(for indexPath: IndexPath) {
+    _onShowDetailsEvent.onNext(getNews(at: indexPath.row))
+  }
+
+  func resetAndRefreshData() {
+    currentDBPage = 1
+    currentNetworkPage = 1
+    _onStateChange.accept(.isRefreshing(true))
+    cancellableRequest = fetchFromNetwork(query: query, page: currentNetworkPage) { [weak self] remoteData in
+      guard let strongSelf = self else { return }
+      strongSelf.cancellableRequest?.cancel()
+      strongSelf.cancellableRequest = nil
+      switch remoteData {
+      case let .success(networkPair):
+        if networkPair.hasData {
+          // load from db
+          strongSelf.fetchFromLocal(limit: strongSelf.dbPageLimit, page: strongSelf.currentDBPage) { [weak self] localData in
+            guard let strongSelf = self else { return }
+            switch localData {
+            case let .success(localPair):
+              strongSelf.newsItem = localPair.response.results ?? []
+              strongSelf._onStateChange.accept(.viewState(.data))
+              strongSelf.currentDBPage += 1
+              strongSelf.currentNetworkPage += 1
+            case .failure:
+              strongSelf._onStateChange.accept(.viewState(.error(message: "Something went wrong")))
+            }
+            strongSelf.hideLoaders()
+          }
+        } else {
+          // no data found
+          strongSelf._onStateChange.accept(.viewState(.empty(message: "No Data found.")))
+          strongSelf.hideLoaders()
+        }
+      case let .failure(error):
+        strongSelf._onStateChange.accept(.viewState(.error(message: error.localizedDescription)))
+        strongSelf.hideLoaders()
+      }
+    }
+  }
+
+  func initialLoad() {
+    _onStateChange.accept(.viewState(.loading))
+    fetchFromLocal(limit: dbPageLimit, page: currentDBPage) { [weak self] localData in
+      guard let strongSelf = self else { return }
+      switch localData {
+      case let .success(localPair):
+        if localPair.hasData {
+          strongSelf.newsItem.appendDistinct(contentsOf: localPair.response.results ?? []) { $0 != $1 }
+          strongSelf.newsItem.sort { $0.dateTime() > $1.dateTime() }
+          strongSelf._onStateChange.accept(.viewState(.data))
+          strongSelf.currentDBPage += 1
+          strongSelf.hideLoaders()
+        } else {
+          if strongSelf.cancellableRequest != nil { return }
+          strongSelf.cancellableRequest = strongSelf.fetchFromNetwork(query: strongSelf.query, page: strongSelf.currentNetworkPage) { [weak self] networkData in
+            guard let strongSelf = self else { return }
+            switch networkData {
+            case let .success(networkPair):
+              if networkPair.hasData {
+                strongSelf.newsItem.appendDistinct(contentsOf: networkPair.response.results?.prefix(upTo: 20) ?? []) { $0 != $1 }
+                strongSelf.newsItem.sort { $0.dateTime() > $1.dateTime() }
+                strongSelf._onStateChange.accept(.viewState(.data))
+                strongSelf.currentDBPage += 1
+                strongSelf.currentNetworkPage += 1
+              }
+            case .failure:
+              printToConsole("something went wrong.")
+            }
+            strongSelf.cancellableRequest?.cancel()
+            strongSelf.cancellableRequest = nil
+            strongSelf.hideLoaders()
+          }
+        }
+      case .failure:
+        printToConsole("something went wrong.")
+        strongSelf.hideLoaders()
+      }
+    }
+  }
+
+  func loadMore() {
+    if _onStateChange.value == .isLoadingMore(true) {
+      return
+    }
+    _onStateChange.accept(.isLoadingMore(true))
+    fetchFromLocal(limit: dbPageLimit, page: currentDBPage) { [weak self] localData in
+      guard let strongSelf = self else { return }
+      switch localData {
+      case let .success(localPair):
+        if localPair.hasData {
+          strongSelf.newsItem.appendDistinct(contentsOf: localPair.response.results ?? []) { $0 != $1 }
+          strongSelf.newsItem.sort { $0.dateTime() > $1.dateTime() }
+          strongSelf.currentDBPage += 1
+          strongSelf._onStateChange.accept(.viewState(.data))
+        } else {
+          // get from network
+          if strongSelf.cancellableRequest != nil {
+            return
+          }
+          strongSelf.cancellableRequest = strongSelf.fetchFromNetwork(query: strongSelf.query, page: strongSelf.currentNetworkPage) { [weak self] networkData in
+            guard let strongSelf = self else { return }
+            strongSelf.cancellableRequest?.cancel()
+            strongSelf.cancellableRequest = nil
+            switch networkData {
+            case let .success(networkPair):
+              if networkPair.hasData {
+                strongSelf.newsItem.appendDistinct(contentsOf: networkPair.response.results?.prefix(upTo: strongSelf.dbPageLimit) ?? []) { $0 != $1 }
+                strongSelf.newsItem.sort { $0.dateTime() > $1.dateTime() }
+                strongSelf._onStateChange.accept(.viewState(.data))
+                strongSelf.currentDBPage += 1
+                strongSelf.currentNetworkPage += 1
+              }
+            case .failure:
+              printToConsole("something went wrong.")
+            }
+            strongSelf.hideLoaders()
+          }
+        }
+      case .failure:
+        printToConsole("something went wrong.")
+        strongSelf.hideLoaders()
+      }
+    }
+  }
 
   // MARK: Private Methods
 
   private func newsAtIndexPath(indexPath: IndexPath) -> News? {
-    newsList[safeIndex: indexPath.row]
+    newsItem[safeIndex: indexPath.row]
   }
 
-  // MARK: Public Methods
-
-  func getNumberofRows() -> Int {
-    newsList.count
-  }
-
-  func getNews(at index: Int) -> News {
-    newsList[index]
-  }
-
-  func showDetails(for indexPath: IndexPath) {
-    guard let newsItem = newsAtIndexPath(indexPath: indexPath) else { return }
-    coordinatorDelegate?.showDetails(for: newsItem)
-  }
-
-  func loadLocalData() {
-    delegate?.showSpinner()
-    resetAndRefreshData()
-  }
-
-  func resetAndRefreshData() {
-    networkRequestDecisionPolicy.reset()
-    rateLimiter.reset()
-
-    newsDisposable?.dispose()
-    newsDisposable = nil
-
-    // Start local data observation
-    startLocalNewsObservation()
-  }
-
-  private func startLocalNewsObservation() {
-    // Start observation only if we are not already doing it
-    guard newsDisposable == nil else { return }
-
-    newsDisposable = repository
-      .observerLocalNewsData()
-      .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-      .observe(on: MainScheduler.instance)
-      .subscribe(onNext: { [weak self] newsData in
-        guard let strongSelf = self else { return }
-        strongSelf.localDataPostProcessing(newsData: newsData)
-      }, onError: { [weak self] error in
-        self?.handleError(error)
-      })
-    newsDisposable?.disposed(by: disposeBag)
-  }
-
-  private func localDataPostProcessing(newsData: [News]) {
-    if newsList != newsData {
-      newsList = newsData
-    }
-    if newsData.isEmpty {
-      makeBlockingRemoteCall { [weak self] remoteCount in
-        if remoteCount == 0 {
-          self?.handleEmptyData()
-          self?.delegate?.hideSpinner()
-          self?.delegate?.hideRefreshingControl()
-        }
-      }
-    } else {
-      delegate?.reloadTable()
-      delegate?.hideSpinner()
-      delegate?.hideRefreshingControl()
-      delegate?.hideErrorMessage()
-    }
-
-    // Make the remote API request only for the first time
-    networkRequestDecisionPolicy.execute {
-      refreshRemoteData()
-    }
-  }
-
-  private func makeBlockingRemoteCall(completion: ((Int) -> Void)?) {
-    // Make the remote API request only for the first time
-    let isRequestExecuted = networkRequestDecisionPolicy.execute {
-      if !refreshRemoteData(completion: completion) { returnDBCount() }
-    }
-
-    if !isRequestExecuted {
-      returnDBCount()
-    }
-
-    func returnDBCount() {
-      // Get the count from the DB and return
-      do {
-        let dbCount = try repository.localTotalCountOfAllNews()
-        completion?(dbCount)
-      } catch {
-        handleError(error)
+  private func fetchFromLocal(limit: Int, page: Int, completion: @escaping (Result<(response: NewsResponse, hasData: Bool), Error>) -> Void) {
+    // get from db
+    repository.loadLocalNews(limit: limit, page: page) { dbRespose in
+      switch dbRespose {
+      case let .success(localResponse):
+        completion(
+          .success((
+            response: localResponse,
+            hasData: (localResponse.pageSize ?? 0) > 0
+          ))
+        )
+      case let .failure(error):
+        completion(.failure(error))
       }
     }
   }
 
-  /// allows us to enable to deal with annoying warnings or underscore replacements.
-  /// to handle scenarios in which you sometimes want to
-  /// ignore the return value while in other cases you want to know the return value
   @discardableResult
-  func refreshRemoteData(completion: ((Int) -> Void)? = nil) -> Bool {
-    rateLimiter.execute { [weak self] in
-      guard let self = self else { return }
-      if newsList.isEmpty {
-        delegate?.hideErrorMessage()
-      }
-      self.startRemoteLoading(completion: completion)
-    }
-  }
-
-  private func startRemoteLoading(completion: ((Int) -> Void)? = nil) {
-    repository.loadRemoteNews(query: "Afghanistan") { [weak self] result in
-      guard let self = self else { return }
-      switch result {
-        case let .success(count):
-          completion?(count)
-        case let .failure(error):
-          // Change the state to error with appropriate message
-          self.rateLimiter.reset()
-          self.handleError(error)
+  private func fetchFromNetwork(query: String, page: Int, completion: @escaping (Result<(response: NewsResponse, hasData: Bool), Error>) -> Void) -> NetworkCancellable {
+    repository.loadRemoteNews(query: query, page: page) { response in
+      switch response {
+      case let .success(newsResponse):
+        completion(
+          .success((
+            response: newsResponse,
+            hasData: (newsResponse.results?.count ?? 0) > 0
+          ))
+        )
+      case let .failure(error):
+        completion(.failure(error))
       }
     }
   }
-}
 
-// MARK: Error/Empty State Handling
-
-extension HomeViewModel {
-  private func handleError(_ error: Error) {
-    delegate?.hideSpinner()
-    delegate?.hideRefreshingControl()
-    switch error {
-      case let ApiError.error422(message: message):
-        handleEmptyData(message: message)
-      default:
-        DispatchQueue.main.async {
-          self.delegate?.showErrorMessage(message: error.localizedDescription)
-        }
-    }
-  }
-
-  private func handleEmptyData(message: String? = nil) {
-    DispatchQueue.main.async {
-      let message = message ?? "No News Found"
-      self.delegate?.showErrorMessage(message: message)
-    }
+  private func hideLoaders() {
+    _onStateChange.accept(.isLoadingMore(false))
+    _onStateChange.accept(.isRefreshing(false))
   }
 }

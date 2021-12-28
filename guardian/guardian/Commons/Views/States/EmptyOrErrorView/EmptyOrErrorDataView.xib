@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyOrErrorDataView" customModule="guardian" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="gbe-TF-Jd0"/>
+                <outlet property="imageView" destination="KUz-J4-YWY" id="u4g-EX-qBK"/>
+                <outlet property="messageLabel" destination="JSz-WY-Haf" id="OV7-dv-I7H"/>
+                <outlet property="retryButton" destination="Fb9-mS-hWn" id="sWP-am-GRb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWg-ql-3op" userLabel="errorView">
+                    <rect key="frame" x="10" y="373.5" width="394" height="149.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KUz-J4-YWY">
+                            <rect key="frame" x="147" y="10" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="aol-L4-07H"/>
+                                <constraint firstAttribute="height" constant="100" id="w4I-he-NCR"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong Something went wrong" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSz-WY-Haf">
+                            <rect key="frame" x="10" y="120" width="374" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JSz-WY-Haf" secondAttribute="trailing" constant="10" id="Gf3-bq-9Tf"/>
+                        <constraint firstItem="KUz-J4-YWY" firstAttribute="top" secondItem="VWg-ql-3op" secondAttribute="top" constant="10" id="JVu-rN-pK3"/>
+                        <constraint firstAttribute="bottom" secondItem="JSz-WY-Haf" secondAttribute="bottom" constant="10" id="awt-f3-QCd"/>
+                        <constraint firstItem="JSz-WY-Haf" firstAttribute="leading" secondItem="VWg-ql-3op" secondAttribute="leading" constant="10" id="gps-Rh-zbT"/>
+                        <constraint firstItem="JSz-WY-Haf" firstAttribute="top" secondItem="KUz-J4-YWY" secondAttribute="bottom" constant="10" id="n91-TX-Oo1"/>
+                        <constraint firstItem="KUz-J4-YWY" firstAttribute="centerX" secondItem="VWg-ql-3op" secondAttribute="centerX" id="x7B-da-6Di"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="O8n-8z-z99">
+                    <rect key="frame" x="127" y="802" width="160" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb9-mS-hWn">
+                            <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                            <color key="backgroundColor" systemColor="systemFillColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="160" id="fx2-wm-nd8"/>
+                                <constraint firstAttribute="height" constant="40" id="tUD-4A-GgW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <state key="normal" title="RETRY">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="O8n-8z-z99" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3Wc-7L-0wj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VWg-ql-3op" secondAttribute="trailing" constant="10" id="6sx-1C-cGR"/>
+                <constraint firstItem="VWg-ql-3op" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="PT3-JA-6jy"/>
+                <constraint firstItem="VWg-ql-3op" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="T9l-S8-s2F"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="O8n-8z-z99" secondAttribute="bottom" constant="20" id="Y9v-SF-622"/>
+            </constraints>
+            <point key="canvasLocation" x="96" y="68"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

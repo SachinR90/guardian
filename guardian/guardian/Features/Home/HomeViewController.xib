@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="noNetworkLabel" destination="jEQ-jl-z5z" id="BWS-4j-eSz"/>
                 <outlet property="noNetworkLabelHeightConstraint" destination="htZ-Fd-C6h" id="bel-Ep-BKV"/>
-                <outlet property="spinner" destination="CNy-L2-13f" id="vha-ak-03y"/>
                 <outlet property="tableView" destination="ZCc-tE-VXe" id="01Z-DG-hNy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,13 +28,6 @@
                     <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                     <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CNy-L2-13f">
-                    <rect key="frame" x="186" y="427" width="42" height="42"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="42" id="d5R-lr-TfF"/>
-                        <constraint firstAttribute="width" secondItem="CNy-L2-13f" secondAttribute="height" multiplier="1:1" id="pgy-IK-F6H"/>
-                    </constraints>
-                </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must be connected to the internet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEQ-jl-z5z" customClass="PaddingLabel" customModule="guardian" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
                     <color key="backgroundColor" red="1" green="0.89019607840000003" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,8 +46,6 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZCc-tE-VXe" secondAttribute="trailing" id="C4S-5O-VwZ"/>
-                <constraint firstItem="CNy-L2-13f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kbt-x1-ILf"/>
-                <constraint firstItem="CNy-L2-13f" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XIn-Oi-e36"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZCc-tE-VXe" secondAttribute="bottom" id="Z9a-Ig-dfe"/>
                 <constraint firstItem="ZCc-tE-VXe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aew-hs-4l7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jEQ-jl-z5z" secondAttribute="trailing" id="ep0-UO-CAH"/>
