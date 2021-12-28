@@ -43,6 +43,10 @@ final class AppDependency: AllInjectables {
       ))
   }()
 
+  lazy var userNotificationProvider: UserNotificationProvidable = {
+    UserNotificationProvider()
+  }()
+
   // MARK: Factories
 
   var viewControllerProvider: ViewControllerProvider {
@@ -59,5 +63,9 @@ final class AppDependency: AllInjectables {
 
   var splashViewModel: SplashViewModelType {
     SplashViewModel(dependency: self)
+  }
+
+  var localNotificatioNContentProvider: LocalNotifcationContentBuildable {
+    LocalNotificationContentBuilder()
   }
 }

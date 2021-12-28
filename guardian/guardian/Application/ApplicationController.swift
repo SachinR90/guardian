@@ -9,6 +9,7 @@ import BackgroundTasks
 import Firebase
 import Foundation
 import GRDB
+import RxSwift
 import UIKit
 
 public func printToConsole(_ items: Any..., separator: String = " ", terminator: String = "\n") {
@@ -23,6 +24,7 @@ class ApplicationController {
   lazy var appRouter = NavigationRouter(navigationController: appNavigationController)
   private var appCoordinator: AppCoordinator!
   private let appDependency = AppDependency()
+  private final let disposeBag = DisposeBag()
 
   func start(with window: UIWindow?) {
     configureAppAppearance()
@@ -34,6 +36,9 @@ class ApplicationController {
       fatalError("Database could not setup properly.")
     }
     appDependency.networkConnectivity.startMonitoring()
+    appDependency.userNotificationProvider.onNotificationReceived.subscribe(onNext: { _ in
+
+    }).disposed(by: disposeBag)
     appCoordinator = AppCoordinator(router: appRouter, dependencies: appDependency)
     window?.rootViewController = appCoordinator.toPresent()
     window?.makeKeyAndVisible()
@@ -81,13 +86,16 @@ extension ApplicationController {
     if UIApplication.shared.backgroundRefreshStatus != .available {
       return
     }
+    BGTaskScheduler.shared.cancelAllTaskRequests()
     BGTaskScheduler.shared.register(forTaskWithIdentifier: bgAppRefreshTaskIdentier, using: nil) { [weak self] task in
+      guard let self = self else { return }
       printToConsole("BackgroundAppRefreshTaskScheduler is executed NOW!")
       printToConsole("Background time remaining: \(UIApplication.shared.backgroundTimeRemaining)s")
+      self.scheduleLocalNotification(name: "App Processing")
       task.expirationHandler = {
         task.setTaskCompleted(success: false)
       }
-      self?.appDependency.homeRespository.loadRemoteNews(query: "Afghanistan", page: 0) { status in
+      self.appDependency.homeRespository.loadRemoteNews(query: "Afghanistan", page: 0) { status in
         switch status {
         case .success:
           task.setTaskCompleted(success: true)
@@ -120,5 +128,20 @@ extension ApplicationController {
     let components = DateComponents(calendar: calendar, hour: 6) // <- 06:00 = 6am
     let next6Am = calendar.nextDate(after: now, matching: components, matchingPolicy: .nextTime)!
     return next6Am
+  }
+
+  private final func scheduleLocalNotification(name: String) {
+    let request = appDependency.localNotificatioNContentProvider
+      .setTitle(title: "Guardian App")
+      .setBody(body: "Background App Refresh")
+      .build()
+    let pnProvider = appDependency.userNotificationProvider
+    pnProvider.requestAuthorizationForNotification {
+      if $0 {
+        pnProvider.pushLocalNotification(with: request, nil)
+      } else {
+        print("\($1?.localizedDescription ?? "")")
+      }
+    }
   }
 }

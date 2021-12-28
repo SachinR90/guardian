@@ -14,3 +14,5 @@ protocol PersistenceInjectable { var persistenceStore: PersistenceStore { get } 
 protocol RemoteConfigInjectable { var remoteConfig: RemoteConfig { get }}
 protocol NewsApiEndPointProviderInjectable { var newsApiEndPointProvider: NewsApiEndPointProvider { get } }
 protocol SecuredDataStoreInjectable { var securedDataStore: SecuredDataStore { get set } }
+protocol UserNotificationInjectable { var userNotificationProvider: UserNotificationProvidable { get }}
+protocol LocalNotificationContentInjectable { var localNotificatioNContentProvider: LocalNotifcationContentBuildable { get }}

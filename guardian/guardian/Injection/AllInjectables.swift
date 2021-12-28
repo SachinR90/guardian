@@ -21,3 +21,5 @@ typealias AllInjectables =
     & NewsApiEndPointProviderInjectable
     & SecuredDataStoreInjectable
     & SplashViewModelInjectable
+    & UserNotificationInjectable
+    & LocalNotificationContentInjectable
