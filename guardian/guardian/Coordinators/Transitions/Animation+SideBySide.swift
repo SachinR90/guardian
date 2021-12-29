@@ -31,9 +31,9 @@ extension InteractiveTransitionAnimation {
       let containerView = transitionContext.containerView
 
       let width = fromView.frame.size.width
-      let centerFrame = CGRect(x: 0, y: 0, width: width, height: fromView.frame.height)
-      let completeLeftFrame = CGRect(x: -width, y: 0, width: width, height: fromView.frame.height)
-      let completeRightFrame = CGRect(x: width, y: 0, width: width, height: fromView.frame.height)
+      let centerFrame = CGRect(x: 0, y: fromView.frame.origin.y, width: width, height: fromView.frame.height)
+      let completeLeftFrame = CGRect(x: -width, y: fromView.frame.origin.y, width: width, height: fromView.frame.height)
+      let completeRightFrame = CGRect(x: width, y: fromView.frame.origin.y, width: width, height: fromView.frame.height)
 
       switch direction {
         case .left:
